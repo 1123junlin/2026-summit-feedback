@@ -1,0 +1,1424 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白袍人生學院｜2026 高峰年會 夥伴回饋牆</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A3D63;
+    --ink: #0E2A45;
+    --sky: #5E8CB5;
+    --gold: #E0A235;
+    --white: #FBF9F3;
+    --graphite: #2E343A;
+    --cloud: #E9E7E0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--white);
+    color: var(--graphite);
+    min-height: 100vh;
+  }
+
+  /* ---------- HERO (Academy Navy, 深色版主視覺) ---------- */
+  .hero {
+    text-align: center;
+    padding: 68px 20px 46px;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 340px; height: 340px;
+    background: repeating-conic-gradient(from 0deg, rgba(224,162,53,.18) 0deg 9deg, transparent 9deg 18deg);
+    -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%);
+            mask: radial-gradient(circle, #000 30%, transparent 70%);
+  }
+  .hero .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.25em;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero p.sub {
+    color: rgba(251,249,243,0.78);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto 34px;
+    line-height: 2;
+    position: relative;
+  }
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .stat-pill {
+    background: rgba(94,140,181,0.14);
+    border: 1px solid rgba(94,140,181,0.4);
+    border-radius: 12px;
+    padding: 14px 22px;
+    min-width: 120px;
+  }
+  .stat-pill .num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .stat-pill .label {
+    font-size: 12px;
+    color: rgba(251,249,243,0.7);
+    margin-top: 4px;
+  }
+
+  /* ---------- TOOLBAR ---------- */
+  .toolbar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  #search {
+    flex: 1 1 260px;
+    max-width: 360px;
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    border-radius: 999px;
+    padding: 12px 18px;
+    color: var(--graphite);
+    font-size: 14px;
+    outline: none;
+  }
+  #search::placeholder { color: #9B9689; }
+  #search:focus { border-color: var(--sky); }
+  .chip {
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    color: var(--graphite);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .chip.active, .chip:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* ---------- WALL ---------- */
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 10px 20px 64px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .card { display: block; }
+  .card-inner {
+    border-radius: 14px;
+    padding: 26px 24px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Dark variant — Academy Navy */
+  .card-dark .card-inner {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .card-dark .quote-mark, .card-dark .stars { color: var(--gold); }
+  .card-dark .author-label { color: rgba(251,249,243,0.65); }
+  .card-dark .avatar { background: var(--gold); color: var(--ink); }
+  .card-dark .post-badge { background: rgba(251,249,243,0.14); color: var(--white); }
+  .link-btn-dark { background: rgba(251,249,243,0.16); color: var(--white); }
+  .link-btn-dark:hover { background: rgba(251,249,243,0.28); }
+
+  /* Light variant — Coat White / Cloud Grey */
+  .card-light .card-inner {
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    color: var(--graphite);
+  }
+  .card-light .quote-mark, .card-light .stars { color: var(--navy); }
+  .card-light .author-label { color: #7A7568; }
+  .card-light .avatar { background: var(--navy); color: var(--white); }
+  .card-light .post-badge { background: var(--navy); color: var(--white); }
+  .link-btn-light { background: var(--navy); color: var(--white); }
+  .link-btn-light:hover { background: var(--ink); }
+
+  .post-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+  .stars {
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .quote-mark {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 40px;
+    font-weight: 900;
+    opacity: 0.55;
+    line-height: 0.5;
+    margin-bottom: 8px;
+  }
+  .text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    flex-grow: 1;
+  }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+  }
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .author-name { font-size: 14px; font-weight: 500; }
+  .author-label { font-size: 11px; margin-top: 1px; }
+  .links { margin-top: 16px; }
+  .link-btn {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: 7px 16px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .empty-msg {
+    grid-column: 1/-1;
+    text-align: center;
+    color: #9B9689;
+    padding: 60px 0;
+    font-size: 14px;
+  }
+
+  /* ---------- FOOTER (Deep Ink) ---------- */
+  footer {
+    text-align: center;
+    padding: 52px 20px 60px;
+    background: var(--ink);
+  }
+  footer .brand {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  footer .tag { color: var(--gold); font-size: 13px; margin-bottom: 24px; letter-spacing: 0.02em; }
+  footer .quote {
+    font-family: 'Noto Serif TC', serif;
+    color: rgba(251,249,243,0.85);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+  footer .copyright { margin-top: 26px; font-size: 12px; color: rgba(251,249,243,0.35); }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 24px; }
+    .stat-pill { min-width: 90px; padding: 10px 14px; }
+    .stat-pill .num { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="eyebrow">WHITE COAT LIFE ACADEMY</div>
+  <h1>白袍人生學院｜2026 高峰年會<br><span class="accent">夥伴回饋牆</span></h1>
+  <p class="sub">
+    復盤過去，展望未來。<br>
+    這一天，82 位白袍夥伴，<br>
+    說出了他們的行動與收穫。
+  </p>
+  <div class="stats-row">
+    <div class="stat-pill"><div class="num">82 位</div><div class="label">完整填答</div></div>
+    <div class="stat-pill"><div class="num">97.0</div><div class="label">平均滿意度</div></div>
+    <div class="stat-pill"><div class="num">FB 29 篇</div><div class="label">公開分享</div></div>
+    <div class="stat-pill"><div class="num">IG 6 篇</div><div class="label">公開分享</div></div>
+  </div>
+</div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="搜尋姓名或關鍵字...">
+  <div class="chip active" data-filter="all">全部回饋</div>
+  <div class="chip" data-filter="link">有公開分享連結</div>
+</div>
+
+<main id="wall">
+    <div class="card card-dark" data-name="Y J" data-text="制度是告訴大家怎麼做，文化是告訴大家為什麼做" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">制度是告訴大家怎麼做，文化是告訴大家為什麼做</div>
+        <div class="author">
+          <div class="avatar">Y</div>
+          <div><div class="author-name">Y J</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1HCQJ482fR/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="王仁昌" data-text="Say the right thing right。張益豪" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">Say the right thing right。張益豪</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王仁昌</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1M4RrUPTDo/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳易儒" data-text="阿金： 心力其實就像一杯水。當我們一直把水倒給別人、倒進很多事情裡，甚至想灌溉整片沙漠，卻忘了回頭替自己補水，總有一天還是會乾涸。" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金： 心力其實就像一杯水。當我們一直把水倒給別人、倒進很多事情裡，甚至想灌溉整片沙漠，卻忘了回頭替自己補水，總有一天還是會乾涸。</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳易儒</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/r/1DEUhRFFtc/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="吳俊諺" data-text="陳冠仁醫師，一模一樣的制度,換不同的人來做,結果天差地遠" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">陳冠仁醫師，一模一樣的制度,換不同的人來做,結果天差地遠</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳俊諺</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BbpLo5Z4P/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="沈冠霖" data-text="心力，就是你只有一杯水，卻企圖倒滿整個沙漠。 學了這麼多道、術、法、器，別忘了回頭檢視自己的 Day 1 初心。先學會暫停、回填心力，我們才能成為那個最受歡迎、走得最遠的 &quot;Doctor Right&quot;！ 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">心力，就是你只有一杯水，卻企圖倒滿整個沙漠。 學了這麼多道、術、法、器，別忘了回頭檢視自己的 Day 1 初心。先學會暫停、回填心力，我們才能成為那個最受歡迎、走得最遠的 &quot;Doctor Right&quot;！ 阿金</div>
+        <div class="author">
+          <div class="avatar">沈</div>
+          <div><div class="author-name">沈冠霖</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1Ckftw66Sj/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張耀文" data-text="阿金老師說的心力" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金老師說的心力</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張耀文</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="李浩銘" data-text="先對頻，再開口：張益豪" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">先對頻，再開口：張益豪</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李浩銘</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BTTUgaAAH/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許耀家" data-text="豪老師，運用山達基的情緒度（能量位階），適時調整，以高於那個人0.5到1.0的情緒度去跟他溝通。" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">豪老師，運用山達基的情緒度（能量位階），適時調整，以高於那個人0.5到1.0的情緒度去跟他溝通。</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許耀家</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1CudWZPH2M/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="胡怡萱" data-text="阿金：要保留自己的心力，知道要去哪裡" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金：要保留自己的心力，知道要去哪裡</div>
+        <div class="author">
+          <div class="avatar">胡</div>
+          <div><div class="author-name">胡怡萱</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/skindrhu/posts/1633491128779860" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳韋閔" data-text="無論目標的大小，要更在意為什麼要開始" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">無論目標的大小，要更在意為什麼要開始</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳韋閔</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="周建存" data-text="制度是告訴大家怎麼做，文化是告訴大家為什麼要這樣做；陳冠仁執行長" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">制度是告訴大家怎麼做，文化是告訴大家為什麼要這樣做；陳冠仁執行長</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周建存</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1Ae6788zzX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="林紘毅" data-text="讓對的人，被你的價值打動" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">讓對的人，被你的價值打動</div>
+        <div class="author">
+          <div class="avatar">林</div>
+          <div><div class="author-name">林紘毅</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/19BNYeezWn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳政誼" data-text="心力就像你只有一杯水,卻想倒滿整片沙漠" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">心力就像你只有一杯水,卻想倒滿整片沙漠</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳政誼</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1AfMeoSbvq/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許芳偉" data-text="暫停的價值，遠高於奔跑" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">暫停的價值，遠高於奔跑</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許芳偉</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/19EbSpZQun/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="周余諭" data-text="阿金 心力的邊界" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金 心力的邊界</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周余諭</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1CgsCj3PtX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳敬智" data-text="Lion說：「當你把自己活好，別人會看見希望； 當你讓別人變好，你的人生會開始有迴響」" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">Lion說：「當你把自己活好，別人會看見希望； 當你讓別人變好，你的人生會開始有迴響」</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳敬智</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1EBtfj7j1y/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="胡守丞" data-text="陳冠仁：企業文化、核心理念的建立很重要" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">陳冠仁：企業文化、核心理念的建立很重要</div>
+        <div class="author">
+          <div class="avatar">胡</div>
+          <div><div class="author-name">胡守丞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/194Gt7wemh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="龔聖淳" data-text="心力像一杯水，你不可能倒滿每一個杯子——阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">心力像一杯水，你不可能倒滿每一個杯子——阿金</div>
+        <div class="author">
+          <div class="avatar">龔</div>
+          <div><div class="author-name">龔聖淳</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1M6NYnWXxN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="劉家驎" data-text="先停一下，看看自己未來的方向" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">先停一下，看看自己未來的方向</div>
+        <div class="author">
+          <div class="avatar">劉</div>
+          <div><div class="author-name">劉家驎</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="邱媛貞" data-text="老獅說：流量本身不值錢，值錢的是你對這群人的影響力" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">老獅說：流量本身不值錢，值錢的是你對這群人的影響力</div>
+        <div class="author">
+          <div class="avatar">邱</div>
+          <div><div class="author-name">邱媛貞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="蔡明劼" data-text="成交來自於信任。 (好像張益豪醫師、老獅、鴿都有講到)" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">成交來自於信任。 (好像張益豪醫師、老獅、鴿都有講到)</div>
+        <div class="author">
+          <div class="avatar">蔡</div>
+          <div><div class="author-name">蔡明劼</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="彭馨儀" data-text="老獅說 醫師藏鏡人，要具備問診式訪談力" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">老獅說 醫師藏鏡人，要具備問診式訪談力</div>
+        <div class="author">
+          <div class="avatar">彭</div>
+          <div><div class="author-name">彭馨儀</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="魏志豪" data-text="暫停的價值有時遠高於奔跑" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">暫停的價值有時遠高於奔跑</div>
+        <div class="author">
+          <div class="avatar">魏</div>
+          <div><div class="author-name">魏志豪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaF8Fj3TrVt/?igsh=MWtocTM3aHVmMW9keQ==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="賈文君" data-text="曹醫師AI友善醫院，與砍掉重練的精神。陳醫師，沒生病不等於健康" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">曹醫師AI友善醫院，與砍掉重練的精神。陳醫師，沒生病不等於健康</div>
+        <div class="author">
+          <div class="avatar">賈</div>
+          <div><div class="author-name">賈文君</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1Xje27xuP7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="劉佳祐" data-text="阿金，心裡力的邊緣回到初衷" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金，心裡力的邊緣回到初衷</div>
+        <div class="author">
+          <div class="avatar">劉</div>
+          <div><div class="author-name">劉佳祐</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://m.facebook.com/story.php?story_fbid=pfbid02Tg6bM3zdAjph1bCMxmmi1PgmGzvxTVjVYLJyMjpXfJKWnGBBnCudq1DigL7UzhAcl&amp;id=100063572627204" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊智鈞" data-text="醫療的本質是信任" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">醫療的本質是信任</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊智鈞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="楊為理" data-text="阿金講師：無論目標的大小，要更在意為什麼要開始" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金講師：無論目標的大小，要更在意為什麼要開始</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊為理</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="阮維鑫" data-text="林建佑醫師。價格敏感～價格透明～訴求感覺" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">林建佑醫師。價格敏感～價格透明～訴求感覺</div>
+        <div class="author">
+          <div class="avatar">阮</div>
+          <div><div class="author-name">阮維鑫</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.threads.com/@weihsinjuan/post/DaHPs5Ek05b?xmt=AQG0wVkPjVG7zAn7dGmojSb5bPqIObrVtVWugDaS2lvkD545VQa-dSUa5k4_bW0BTJWqYcU&amp;slof=1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="王曜" data-text="我們總是忙到忘記自己是誰，卻又沒有時間再次想起；阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">我們總是忙到忘記自己是誰，卻又沒有時間再次想起；阿金</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王曜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1BT8gMLKG4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張光正" data-text="用AI來做原本吃不到的" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">用AI來做原本吃不到的</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張光正</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="曹皓崴" data-text="林建佑醫師 不要搭訕主持人" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">林建佑醫師 不要搭訕主持人</div>
+        <div class="author">
+          <div class="avatar">曹</div>
+          <div><div class="author-name">曹皓崴</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="凃建維" data-text="老獅說：讓自己成功，是能力，能讓別人成功才是影響力。" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">老獅說：讓自己成功，是能力，能讓別人成功才是影響力。</div>
+        <div class="author">
+          <div class="avatar">凃</div>
+          <div><div class="author-name">凃建維</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="許文彥" data-text="做留量比流量更重要 Lion" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">做留量比流量更重要 Lion</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許文彥</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BmeijYdhC/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="李俊廷" data-text="阿金。永遠創新，永遠新創" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金。永遠創新，永遠新創</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李俊廷</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/18pgQ8ukjW/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳昱傑" data-text="鄭晴 要把家庭也當作一個公司部門來經營，這樣花下心力，就會有 work-life balance" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">鄭晴 要把家庭也當作一個公司部門來經營，這樣花下心力，就會有 work-life balance</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳昱傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/18vXxsC3zo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳品宏" data-text="有太遠，會忘記為什麼要出發，阿金講師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">有太遠，會忘記為什麼要出發，阿金講師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳品宏</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1HGE5YbSWH/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳依君" data-text="阿金；暫停的價值有時遠高於奔跑，我為什麼開始" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金；暫停的價值有時遠高於奔跑，我為什麼開始</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳依君</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/reel/DaF5wUVs6kX/?igsh=ZHF0bTF2Y3FjdGI1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="江佩璋" data-text="用經營公司的思維經營你的人生" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">用經營公司的思維經營你的人生</div>
+        <div class="author">
+          <div class="avatar">江</div>
+          <div><div class="author-name">江佩璋</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaF3cvovnSz/?igsh=NnYwejNyZzV4MTd3" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳煥昇" data-text="想起自己的day 1, 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">想起自己的day 1, 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳煥昇</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1D9kNtPm7o/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="周余諭" data-text="心力的邊界" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">心力的邊界</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周余諭</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="潘琪方" data-text="張益豪醫師。溝通的本質：交換傳遞連結" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">張益豪醫師。溝通的本質：交換傳遞連結</div>
+        <div class="author">
+          <div class="avatar">潘</div>
+          <div><div class="author-name">潘琪方</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaFoscoFN6c/?igsh=MXViZW1ndDFpMWRvdA==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="郭亮增" data-text="不要忘記你是誰，阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">不要忘記你是誰，阿金</div>
+        <div class="author">
+          <div class="avatar">郭</div>
+          <div><div class="author-name">郭亮增</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1QNtorcDkW/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="鄭畇綺" data-text="Always new , always innovatives" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">Always new , always innovatives</div>
+        <div class="author">
+          <div class="avatar">鄭</div>
+          <div><div class="author-name">鄭畇綺</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/18umQBfGxC/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張修碩" data-text="打造AI友善的營運系統" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">打造AI友善的營運系統</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張修碩</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="洪健智" data-text="Lion老師說的，當你把自己活好，別人會看到希望" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">Lion老師說的，當你把自己活好，別人會看到希望</div>
+        <div class="author">
+          <div class="avatar">洪</div>
+          <div><div class="author-name">洪健智</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="廖偉成" data-text="老獅的星雲大師金句" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">老獅的星雲大師金句</div>
+        <div class="author">
+          <div class="avatar">廖</div>
+          <div><div class="author-name">廖偉成</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.threads.com/@drmaxliao/post/DaFeEu8iafb?xmt=AQG0L7Y-ERUPofknDYvjHda_HhoYD0SBxkbCWHPySOlA-3YTjUiUN70H3EDvL_NwlW-FlEI&amp;slof=1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="楊惠蘚" data-text="感謝白袍人生學院，希望明年的今天比此時更進步" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">感謝白袍人生學院，希望明年的今天比此時更進步</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊惠蘚</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="蔡宜臻" data-text="價值來自於創造/陳冠仁醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">價值來自於創造/陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">蔡</div>
+          <div><div class="author-name">蔡宜臻</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="魏志豪" data-text="暫停不是退後，是讓你想清楚 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">暫停不是退後，是讓你想清楚 阿金</div>
+        <div class="author">
+          <div class="avatar">魏</div>
+          <div><div class="author-name">魏志豪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="徐盛邦" data-text="心力" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">心力</div>
+        <div class="author">
+          <div class="avatar">徐</div>
+          <div><div class="author-name">徐盛邦</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳柏儒" data-text="忘記為何開始創業 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">忘記為何開始創業 阿金</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳柏儒</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳彥霖" data-text="真正的醫病溝通，不是把醫學知識講得更完整，而是先辨識患者此刻需要的是交換、傳遞，還是連結。張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">真正的醫病溝通，不是把醫學知識講得更完整，而是先辨識患者此刻需要的是交換、傳遞，還是連結。張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳彥霖</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/17cswoK66j/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="鄭晴" data-text="想想最一開始想把公司帶到哪，阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">想想最一開始想把公司帶到哪，阿金</div>
+        <div class="author">
+          <div class="avatar">鄭</div>
+          <div><div class="author-name">鄭晴</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊家純" data-text="意志力是一種稀缺的資源—阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">意志力是一種稀缺的資源—阿金</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊家純</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="徐嘉賢" data-text="林建佑醫師、豪哥「痴情/痴漢」" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">林建佑醫師、豪哥「痴情/痴漢」</div>
+        <div class="author">
+          <div class="avatar">徐</div>
+          <div><div class="author-name">徐嘉賢</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="潘珮瑜" data-text="溝通是看診最重要一部分，三個樓梯。張益豪" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">溝通是看診最重要一部分，三個樓梯。張益豪</div>
+        <div class="author">
+          <div class="avatar">潘</div>
+          <div><div class="author-name">潘珮瑜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳書毅" data-text="阿金：是否心力不足" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金：是否心力不足</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳書毅</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳炳曄" data-text="阿金老師的停下來看一看不一定要前進" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金老師的停下來看一看不一定要前進</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳炳曄</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="邱文瑾" data-text="重點人物在哪裡，我們要去哪里" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">重點人物在哪裡，我們要去哪里</div>
+        <div class="author">
+          <div class="avatar">邱</div>
+          <div><div class="author-name">邱文瑾</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/carebeautyclinic?igsh=ZXQ5cDJqbHJ3YzA0" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="翁子傑" data-text="我們總是忙到忘記自己" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">我們總是忙到忘記自己</div>
+        <div class="author">
+          <div class="avatar">翁</div>
+          <div><div class="author-name">翁子傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳冠仁" data-text="張益豪院長超棒！" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">張益豪院長超棒！</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳冠仁</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="李宜靜" data-text="為什麼會出發？" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">為什麼會出發？</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李宜靜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="黃千峯" data-text="價值觀、文化對企業的重要性" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">價值觀、文化對企業的重要性</div>
+        <div class="author">
+          <div class="avatar">黃</div>
+          <div><div class="author-name">黃千峯</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="李亭諪" data-text="永遠創新 永遠新創" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">永遠創新 永遠新創</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李亭諪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="許柏格" data-text="信任 張益豪 蒼藍鴿" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">信任 張益豪 蒼藍鴿</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許柏格</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="張儷馨" data-text="三個梯子" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">三個梯子</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張儷馨</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳其穎" data-text="陳冠仁醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳其穎</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="黃哲緯" data-text="阿金 我為什麼開始" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金 我為什麼開始</div>
+        <div class="author">
+          <div class="avatar">黃</div>
+          <div><div class="author-name">黃哲緯</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳君琳" data-text="「當規則不清楚，就會用猜測和情緒來填補。」" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">「當規則不清楚，就會用猜測和情緒來填補。」</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳君琳</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊為傑" data-text="曹醫師：all in AI" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">曹醫師：all in AI</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊為傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="羅士傑" data-text="永遠創新 永遠新創 阿金老師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">永遠創新 永遠新創 阿金老師</div>
+        <div class="author">
+          <div class="avatar">羅</div>
+          <div><div class="author-name">羅士傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/18jStWuMUb/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許聯輝" data-text="張益豪 三把梯子" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">張益豪 三把梯子</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許聯輝</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="阮維鑫" data-text="價格敏感應對方式：報價透明、感性驅動。林建佑醫師。" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">價格敏感應對方式：報價透明、感性驅動。林建佑醫師。</div>
+        <div class="author">
+          <div class="avatar">阮</div>
+          <div><div class="author-name">阮維鑫</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="洪聖凱" data-text="暫停的價值，有時候遠高於奔跑。" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">暫停的價值，有時候遠高於奔跑。</div>
+        <div class="author">
+          <div class="avatar">洪</div>
+          <div><div class="author-name">洪聖凱</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="林邵臻" data-text="我們總是忙到忘記自己是誰" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">我們總是忙到忘記自己是誰</div>
+        <div class="author">
+          <div class="avatar">林</div>
+          <div><div class="author-name">林邵臻</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BMgFsTx3p/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="沈瑞文" data-text="“診所的核心價值是什麼”，值得我好好思考，這個好像不只一人說" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">“診所的核心價值是什麼”，值得我好好思考，這個好像不只一人說</div>
+        <div class="author">
+          <div class="avatar">沈</div>
+          <div><div class="author-name">沈瑞文</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳韻筑" data-text="我們總是忙到忘記自己是誰， 卻又沒有時間再次想起。 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">我們總是忙到忘記自己是誰， 卻又沒有時間再次想起。 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳韻筑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/stories/euchuchen/3928470865600802181?utm_source=ig_story_item_share&amp;igsh=MXN2Y2I5ajc3OTRhaw==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳昭仁" data-text="我是一個健康的醫師嗎？ 陳君琳醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">我是一個健康的醫師嗎？ 陳君琳醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳昭仁</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="何建輝" data-text="如何讓醫師留下來？" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">如何讓醫師留下來？</div>
+        <div class="author">
+          <div class="avatar">何</div>
+          <div><div class="author-name">何建輝</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="王浩洸" data-text="藍倉鴿 馬上就開始短影音" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">藍倉鴿 馬上就開始短影音</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王浩洸</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="顧芳瑜" data-text="阿金 知道自己為什麼會創業" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">阿金 知道自己為什麼會創業</div>
+        <div class="author">
+          <div class="avatar">顧</div>
+          <div><div class="author-name">顧芳瑜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="吳張瑀" data-text="." data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div>
+        <div class="text">.</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳張瑀</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+  <div class="empty-msg" id="empty-msg" style="display:none;">沒有符合條件的回饋，換個關鍵字試試？</div>
+</main>
+
+<footer>
+  <div class="brand">白袍人生學院 White Coat Life Academy</div>
+  <div class="tag">一群人一起打拼，走得更遠</div>
+  <p class="quote">
+    復盤過去，才能看清方向。<br>
+    展望未來，才敢邁開步伐。<br><br>
+    謝謝每一位白袍夥伴，<br>
+    這一天的分享。
+  </p>
+  <p class="copyright">© 2026 白袍人生學院 ｜ 高峰年會夥伴回饋牆</p>
+</footer>
+
+<script>
+const input = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+const chips = document.querySelectorAll('.chip');
+const emptyMsg = document.getElementById('empty-msg');
+let currentFilter = 'all';
+
+function applyFilter() {
+  const q = input.value.toLowerCase().trim();
+  let visibleCount = 0;
+  cards.forEach(c => {
+    const name = (c.dataset.name||'').toLowerCase();
+    const text = (c.dataset.text||'').toLowerCase();
+    const hasLink = c.dataset.haslink === 'true';
+    const matchSearch = !q || name.includes(q) || text.includes(q);
+    const matchFilter = currentFilter === 'all' || (currentFilter === 'link' && hasLink);
+    const show = matchSearch && matchFilter;
+    c.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  });
+  emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+input.addEventListener('input', applyFilter);
+chips.forEach(chip => {
+  chip.addEventListener('click', () => {
+    chips.forEach(c => c.classList.remove('active'));
+    chip.classList.add('active');
+    currentFilter = chip.dataset.filter;
+    applyFilter();
+  });
+});
+</script>
+
+</body>
+</html>
