@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>白袍人生學院｜2026 高峰年會 夥伴回饋牆</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@700;900&family=Noto+Sans+TC:wght@300;400;500;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1A3D63;
+    --ink: #0E2A45;
+    --sky: #5E8CB5;
+    --gold: #E0A235;
+    --white: #FBF9F3;
+    --graphite: #2E343A;
+    --cloud: #E9E7E0;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Noto Sans TC', "PingFang TC", "Microsoft JhengHei", sans-serif;
+    background: var(--white);
+    color: var(--graphite);
+    min-height: 100vh;
+  }
+
+  /* ---------- HERO (Academy Navy, 深色版主視覺) ---------- */
+  .hero {
+    text-align: center;
+    padding: 68px 20px 46px;
+    background: var(--ink);
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -120px; right: -120px;
+    width: 340px; height: 340px;
+    background: repeating-conic-gradient(from 0deg, rgba(224,162,53,.18) 0deg 9deg, transparent 9deg 18deg);
+    -webkit-mask: radial-gradient(circle, #000 30%, transparent 70%);
+            mask: radial-gradient(circle, #000 30%, transparent 70%);
+  }
+  .hero .logo {
+    width: 64px;
+    height: auto;
+    margin: 0 auto 20px;
+    display: block;
+    position: relative;
+  }
+  .hero .eyebrow {
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.25em;
+    font-size: 12px;
+    color: var(--gold);
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    position: relative;
+  }
+  .hero h1 {
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 900;
+    font-size: 32px;
+    color: var(--white);
+    margin-bottom: 16px;
+    line-height: 1.5;
+    position: relative;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero p.sub {
+    color: rgba(251,249,243,0.78);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto 34px;
+    line-height: 2;
+    position: relative;
+  }
+  .stats-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    max-width: 780px;
+    margin: 0 auto;
+    position: relative;
+  }
+  .stat-pill {
+    background: rgba(94,140,181,0.14);
+    border: 1px solid rgba(94,140,181,0.4);
+    border-radius: 12px;
+    padding: 14px 22px;
+    min-width: 120px;
+  }
+  .stat-pill .num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 23px;
+    font-weight: 600;
+    color: var(--gold);
+  }
+  .stat-pill .label {
+    font-size: 12px;
+    color: rgba(251,249,243,0.7);
+    margin-top: 4px;
+  }
+
+  /* ---------- TOOLBAR ---------- */
+  .toolbar {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 28px 20px 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    justify-content: center;
+  }
+  #search {
+    flex: 1 1 260px;
+    max-width: 360px;
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    border-radius: 999px;
+    padding: 12px 18px;
+    color: var(--graphite);
+    font-size: 14px;
+    outline: none;
+  }
+  #search::placeholder { color: #9B9689; }
+  #search:focus { border-color: var(--sky); }
+  .chip {
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    color: var(--graphite);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-size: 13px;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    white-space: nowrap;
+  }
+  .chip.active, .chip:hover {
+    background: var(--navy);
+    color: var(--white);
+    border-color: var(--navy);
+  }
+
+  /* ---------- WALL ---------- */
+  main {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 10px 20px 64px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    gap: 20px;
+  }
+  .card { display: block; }
+  .card-inner {
+    border-radius: 14px;
+    padding: 26px 24px;
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Dark variant — Academy Navy */
+  .card-dark .card-inner {
+    background: var(--navy);
+    color: var(--white);
+  }
+  .card-dark .quote-mark, .card-dark .stars { color: var(--gold); }
+  .card-dark .author-label { color: rgba(251,249,243,0.65); }
+  .card-dark .avatar { background: var(--gold); color: var(--ink); }
+  .card-dark .post-badge { background: rgba(251,249,243,0.14); color: var(--white); }
+  .link-btn-dark { background: rgba(251,249,243,0.16); color: var(--white); }
+  .link-btn-dark:hover { background: rgba(251,249,243,0.28); }
+
+  /* Light variant — Coat White / Cloud Grey */
+  .card-light .card-inner {
+    background: var(--white);
+    border: 1px solid var(--cloud);
+    color: var(--graphite);
+  }
+  .card-light .quote-mark, .card-light .stars { color: var(--navy); }
+  .card-light .author-label { color: #7A7568; }
+  .card-light .avatar { background: var(--navy); color: var(--white); }
+  .card-light .post-badge { background: var(--navy); color: var(--white); }
+  .link-btn-light { background: var(--navy); color: var(--white); }
+  .link-btn-light:hover { background: var(--ink); }
+
+  .post-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 14px;
+    width: fit-content;
+  }
+  .stars {
+    font-size: 14px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .quote-mark {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 40px;
+    font-weight: 900;
+    opacity: 0.55;
+    line-height: 0.5;
+    margin-bottom: 8px;
+  }
+  .text {
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.8;
+    margin-bottom: 6px;
+    flex-grow: 1;
+  }
+  .text-empty { opacity: 0.55; font-style: italic; }
+  .speaker-tag {
+    font-family: 'Noto Serif TC', serif;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 18px;
+  }
+  .card-dark .speaker-tag { color: var(--gold); }
+  .card-light .speaker-tag { color: var(--navy); }
+  .author {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: auto;
+  }
+  .avatar {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif TC', serif;
+    font-weight: 700;
+    font-size: 14px;
+  }
+  .author-name { font-size: 14px; font-weight: 500; }
+  .author-label { font-size: 11px; margin-top: 1px; }
+  .links { margin-top: 16px; }
+  .link-btn {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    border-radius: 999px;
+    padding: 7px 16px;
+    text-decoration: none;
+    transition: background 0.15s ease;
+  }
+
+  .empty-msg {
+    grid-column: 1/-1;
+    text-align: center;
+    color: #9B9689;
+    padding: 60px 0;
+    font-size: 14px;
+  }
+
+  /* ---------- FOOTER (Deep Ink) ---------- */
+  footer {
+    text-align: center;
+    padding: 52px 20px 60px;
+    background: var(--ink);
+  }
+  footer .brand {
+    font-family: 'Noto Serif TC', serif;
+    color: var(--white);
+    font-weight: 700;
+    font-size: 17px;
+    margin-bottom: 8px;
+  }
+  footer .tag { color: var(--gold); font-size: 13px; margin-bottom: 24px; letter-spacing: 0.02em; }
+  footer .quote {
+    font-family: 'Noto Serif TC', serif;
+    color: rgba(251,249,243,0.85);
+    font-size: 15px;
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 2;
+  }
+  footer .copyright { margin-top: 26px; font-size: 12px; color: rgba(251,249,243,0.35); }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 24px; }
+    .stat-pill { min-width: 90px; padding: 10px 14px; }
+    .stat-pill .num { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <img class="logo" src="data:image/png;base64,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PSJodHRwOi8vbnMuYWRvYmUuY29tL2V4aWYvMS4wLyI+CiAgICAgICAgIDxleGlmOlBpeGVsWURpbWVuc2lvbj41ODA8L2V4aWY6UGl4ZWxZRGltZW5zaW9uPgogICAgICAgICA8ZXhpZjpQaXhlbFhEaW1lbnNpb24+NTU2PC9leGlmOlBpeGVsWERpbWVuc2lvbj4KICAgICAgICAgPGV4aWY6VXNlckNvbW1lbnQ+U2NyZWVuc2hvdDwvZXhpZjpVc2VyQ29tbWVudD4KICAgICAgPC9yZGY6RGVzY3JpcHRpb24+CiAgIDwvcmRmOlJERj4KPC94OnhtcG1ldGE+CokvwacAAAAcaURPVAAAAAIAAAAAAAABIgAAACgAAAEiAAABIgAASvc0Fw0jAABAAElEQVR4Aeyd+dcWxZXHO5MYlVVQNlkEFBdENsEFRAX3Uccx0UnGM3MmJ+fM/DB/0/ySmZNJZqITNZooGBU3FkVZRFBAAREUEGUbEONk+JS52DTd7/v083R1V/XzrXOwnref6upbn2qfvn3r3lvf+/PpkqiIgAiIgAiIgAiIQMAEvieFJeDZkWgiIAIiIAIiIAKOgBQW3QgiIAIiIAIiIALBE5DCEvwUSUAREAEREAEREAEpLLoHREAEREAEREAEgicghSX4KZKAIiACIiACIiACUlh0D4iACIiACIiACARPQApL8FMkAUVABERABERABKSw6B4QAREQAREQAREInoAUluCnSAKKgAiIgAiIgAhIYdE9IAIiIAIiIAIiEDwBKSzBT5EEFAEREAEREAERkMKie0AEREAEREAERCB4AlJYgp8iCSgCIiACIiACIiCFRfeACIiACIiACIhA8ASksAQ/RRJQBERABERABERACovuAREQAREQAREQgeAJSGEJfookoAiIgAiIgAiIgBQW3QMiIAIiIAIiIALBE5DCEvwUSUAREAEREAEREAEpLLoHREAEREAEREAEgicghSX4KZKAIiACIiACIiACUlh0D4iACIiACIiACARPQApL8FMkAUVABERABERABKSw6B4QAREQAREQAREInoAUluCnSAKKgAiIgAiIgAhIYdE9IAIiIAIiIAIiEDwBKSzBT5EEFAEREAEREAERkMKie0AEREAEREAERCB4AlJYgp8iCSgCIiACIiACIiCFRfeACIiACIiACIhA8ASksAQ/RRJQBERABERABERACovuAREQAREQAREQgeAJSGEJfookoAiIgAiIgAiIgBQW3QMiIAIiIAIiIALBE5DCEvwUSUAREAEREAEREAEpLLoHREAEREAEREAEgicghSX4KZKAIiACIiACIiACUlh0D4iACIiACIiACARPQApL8FMkAUVABERABERABKSw6B4QAREQAREQAREInoAUluCnSAKKgAiIgAiIgAhIYdE9IAIiIAIiIAIiEDwBKSzBT5EEFAEREAEREAERkMKie0AEREAEREAERCB4AlJYgp8iCSgCIiACIiACIiCFRfeACIiACIiACIhA8ASksAQ/RRJQBERABERABERACovuAREQAREQAREQgeAJSGEJfookoAiIgAiIgAiIgBQW3QMiIAIiIAIiIALBE5DCEvwUSUAREAEREAEREAEpLLoHREAEREAEREAEgicghSX4KZKAIiACIiACIiACUlh0D4iACIiACIiACARPQApL8FMkAUVABERABERABKSw6B4QAREQAREQAREInoAUluCnSAKKgAiIgAiIgAhIYdE9IAIiIAIiIAIiEDwBKSzBT5EEFAEREAEREAERkMKie6BSAn/605+SAwcOJH/+858r7VediQAEvve9750BYZ+p/+qv/srdc9///vddG46dd955ru0PfvAD95nvVERABOIlIIUl3rkLUnIUlYMHDyZHjhwJUj4J1R4CprAUjci+p+Yfigs1yg3lhz/8YXL++ee7f3ynIgIiEDYBKSxhz0+U0p06dSrZvXv3mTfdvEGg2PDg+L//+7+z6iLLDA+abFv+5nheyeu/TFt7Y8/ruwlZfI61LJcmZGEeOuFedP/kzaP1SY3Cwj9TYvh84YUXFp2m4yIgAg0QkMLSAPR+uCTLQrKy9MNMt3uMKDBDhgxxiswFF1yQ2JIToy5S9NpNRKMTgeYISGFpjn2rr3zixIlk7969rR6jBtdfBGwpaejQoc76ggKD0sJxaikw/XU/aLT1E5DCUj/zvrgiywb79u1LUFxURKCNBFg2QkkZNmxYgvLC31hg0laYNo5bYxKBpghIYWmKfMuviy/B8ePHk/379zvfk5YPV8MTAaewoLjYEhKKiyk1wiMCItA7ASksvTNUDwUELMT52LFjBS10WATaR4AlIkKq8X/BcZfPRCOhwKiIgAh0T0AKS/fsdOYgBLCyoKzggIvyoiIC/UYA5cUijszygiIjf5d+uxM03ioISGGpgqL6KCTw9ddfu2UhFBf7kUaR4fNgNZ0O1sa+L9O2m3PK9F+mrW9Z6J/SCe9+k6XO+5E5MKsL1hYcd1FcUGZUREAEOiMghaUzTmrVJQEegocPH3bJ5L755pszvRQ9QM80yPlQ5hxfbU2suvu36+bV/SyLjT0ELgPJkpaPdigr/LOIIz6riIAIDExACsvAfPRtBQS++uorZ2X53//93wp6Uxci0A4CKC74taCssFyE8oL1heMqIiAC5xKQwnIuEx2pmIBZWfBlSVtZKr6MuhOBKAmgoODrgvKC0nLRRRc5xSXKwUhoEfBIQAqLR7jq+jsCWFlQWBQx9B0TfRKBLAGzugwfPjwZPXq083vJttHfItCvBKSw9OvMNzDuL7/8UhFDDXDXJeMkgMUFawuKi5xz45xDSV0tASks1fJUbwMQwIfls88+S06ePDlAK30lAiKQJoCygtKC8mLbAKS/12cR6BcCUlj6ZaYDGCe+LCwLHTp0SNlvA5gPiRAPARQVHHNHjhzp/Fywvsg5N575k6TVEJDCUg1H9dIhAdL1m5UFBUZFBESgcwIoLuxdhMXFdo/u/Gy1FIG4CUhhiXv+opOeTRHZXwgrCwoL/3hT7FR5sbZWDwTA2lhdVVvrx/q12o7n1dbG6rw2dszaZGv7Pq+uq61dJ08GO2ZtrLbjebW1sTqvTfaYtbU6+336b2tjdfq77GdrY3X2+7y/ra3VeW3smLWx2o7n1dbG6mwbQqGxtowYMcIpLrRTEYG2E5DC0vYZDnB8RAp98sknLl1/WmGxH+fsj29Rm+xxhpo9VvR3mbbWR5lzfLWVLN8puOn7pQ4uzCnFrjVY7ast17WCtQXfFqKKWCZSEYE2E5DC0ubZDXRsWFn27NmTHD16tGPLSqBDkVgi0DgBrC0oLqNGjXKbLTYukAQQAU8EpLB4AqtuByaAsoLSok0RB+akb0WgUwIknUNpYakIXxcVEWgbASksbZvRSMaDleXjjz9Ojhw5UmhiZyiDmd3t+/Sw7VhRXaat9dEPsvTTWNt6D2BtYXlozJgxLuV/epz6LAKxE5DCEvsMRiw/VpadO3dqWSjiOZTo4RGwEOixY8e6paLwJJREItAdASks3XHTWRUQ4I3+o48+Urr+CliqCxFIE8AhGWvLxRdf7EKgtUSUpqPPsRKQwhLrzLVEbqwsO3bsaMloNAwRCIuAZclliei8884LSzhJIwIlCUhhKQlMzasnsH37dmdl4S0Qq0te4Y0RvxfapOtsCLSdSz+9tA1NFsacN9YquBSNNY+hMc2TBfZ555RpWyQLfVcx1n6Txf5/IvR5woQJ2gWaG0klWgJSWKKduvYIfvjwYfmytGc6NZJACRD6PH78eJfav0hxC1R0iSUCjoAUFt0IjRPgLXDbtm0JmyOqiIAI+CNw4YUXJuPGjXMZcrFmqYhATASksMQ0Wy2W9Ysvvkh27dpVuCTU4qFraCJQKwF8WVgeImeLlJZa0etiPRKQwtIjQJ1eDQESyH344YcJmyOqiIAI+CVAGn9TWnDMVRGBGAhIYYlhlvpARpxKsbKQTI7PKiIgAn4JoLSwPETosyKI/LJW79UQkMJSDUf1UgGBr776Ktm9e7fLfltBd+pCBERgEAIW9oziQt4WFREImYAUlpBnp89kw7Jy8ODBZO/evck333yTO3qiGyxUM7dB6qC1tTr1VeFH32199184sJwv+kmWEMZqMlidMyXnHPLV1i5E//zDyoLScv7559tXqkUgOAJSWIKbkv4WiEgh28m5v0lo9CJQHwGcb0ePHu38WmRpqY+7rlSOgBSWcrzU2jMBLCv79+93VhbPl1L3IiACKQL4tKC0kKtFSksKjD4GQ0AKSzBTIUGMwLFjx5yVhVpFBESgPgIoLaTxR2lR9FB93HWlzghIYemMk1rVSAAry759+5JPP/20xqvqUiIgAhBgeQh/Fv5JadE9ERIBKSwhzYZkOUOAEGd8WYgcUhEBEaiXAI64kyZNctYWJZerl72uVkxACksxG33TIAGsLORkOXDgQMdRQQ2K6yIteBvVG6m/WSA6jEiyvCgxO5au+Wx/+5OqvT2jtEybNs35tUhpae88xzQyKSwxzVafyWqJ5E6ePOkUAh4+/HDy0OLHlL+p84p9l60HaztY/+n+0m2RA4fFqVOnKt15HmQPx1BquReo05/JmoxljvvGLHQcY+5ob0oPf1PSc5q+r+x4nuj2HXX6PrDj6XPsWCdt7bz0OWmZ7Pt0nW5btSwo4NOnT3d7DxX9v5aWRZ9FwCcBKSw+6arvngjwkNm5c6fLgMuPcuiFjeUuu+wy9+Meuqz9JB/3ztdff52cOnXK/WP7Bz5zjHsMBYaafyrnEhg6dKi7r9ntWUUEmiQghaVJ+rr2oAQIcf7kk0/cw2XQxg034A107NixyeTJk2VlaXguOrk8CoopMeT/OXHihLvPTLnBaqPyLQGUlSuuuELhzrohGiUghaVR/Lr4YAR4qLAp4pdffhmFP8Lw4cPd2yhvpSpxEcDSggLDMhJWGBQYlpVQZlBe+n1JhHDnKVOmyE8rrtu6VdJKYWnVdLZzMDjesscQb76hF9b82QWXf/gTqMRLAGUZpYV8QOYTw+d+Xjq69NJLXfSQ7u147+uYJZfCEvPs9YnsPCC2bduWHD58uNBBEhRp58O0o2LR8TLnlGk7YsQIWVkA1pLC/YOFBesL1haUFu5FlBm+o+Tdbxwvuveyx8u2pT0l20/R31W0pQ92dSZyiL2HVESgbgJSWOomrut1RQAry0cffXTGNM8PcyfFHiRl2nZyjrWxOt0/2ULxYyHxlt5E02Ti/8x9hwJty0aff/652128k/vR7hWrO6HRTdtOzrE2VnciC21ojz8LSouWPTulpnZVEZDCUhVJ9eOVAA+Jd999173Ver1QRZ3jy0KIsyIrKgIaYDfm84Kl5bPPPnOKSz846qK0jBo1yikt2nMowBuzxSJJYWnx5LZtaEQM4YDbydts02PHssJbKI6K/MCrtJdA2urCPXrw4EFnCWzviJMEK6JFxPFZRQTqICCFpQ7KukYlBHijfeedd84kA6ukU4+d2FvoBRdc4PEq6jokAtyjWFzYC4vlojZbXM4//3zngMvSp4oI1EFACksdlHWNygjgx8LDIIaCleXKK6905nNZWWKYsepkxOpy6NAhl0MIR10UmTaWiy66yC19DhkypI3D05gCIyCFJbAJkTgDE8CXZePGjdH4smBlufzyyxPeRlX6jwAWFhRslorI6RLDcmaZWWI5iFDniRMnumWiMueqrQiUJSCFpSwxtW+cAJsi8i+GH3/yslxzzTUJTriysjR+6zQmAMoK/leERMeQT6gMKNuSgr20dI+XIae2ZQlIYSlLTO0bJ0A+DKwstrFd4wINIsD48eOd2VzOiYOAavnXKNhYWogoQnGJQeHudEqwJLKPlkKdOyWmdt0QkMLSDTWd0ygB/AHIfLtnz55G5ej04lhZZs2apRDnToG1vB1Oudy/bDfRFmsLyji5h1DOud9VRMAHASksPqiqT+8EcGQkLwvWlhgKkRRsHieTeQyz5V9GFBWsLfxj36I2FBxvp0+fnowcOVL3eRsmNMAxSGEJcFIk0uAEcL7lLZWdnGMoRAzNnj3b+bLEIK9k9E8ASyFWlr1790azuedgVFDMyT9ECn8VEaiagBSWqomqv1oIsP7Pfi5bt26NxspyySWXJDNnzqyFjy4SBwHuYywsKC1sPxF73haWgwjlZ68hWRPjuAdjklIKS0yzJVnPIoBZ3SKG0j+OPAT4u6hOd1LUJnu8zDlFbVnnnzNnjqwsaUD67AgQRUT486effuoU8Kru3zTe7D1d9HeZc7Jt+RsH3KuvvjpR2v40HX2ugoAUliooqo/GCHzxxRfJBx984HJcNCZEiQtPmDDBvYGWOEVN+4QACjgKC8uc+GahUMRUTMli+XPq6X20cMJVEYEqCUhhqZKm+qqdAKHNO3fudD/0tV+8iwvy1jlv3rxE6fq7gNcHp7AkRIbcHTt2RBO2nzct+LAsXLhQvix5cHSsawJSWLpGpxNDIUCkxbZt2xIccUMvvIWyaRwmcxURyCOAZYV9iLAcxhz2TAbcGTNm5A1Rx0SgKwJSWLrCppNCImBZRFFcYiik6b/uuuu85mXhoWf/YmBSJCMKXrbYMauz37flbywtW7ZsiVZpwQF37ty5Xu/ztsy1xtEZASksnXFSq8AJEGXBxogxvJHifDtp0iS3zu/roUvkiaWCD3zqcsXDD4LCQ4/lBZhRc5x8H3ym5jjH4Ehtn3M7jfAgSsv7778f7fIQPltYWZgXFRHolYAUll4J6vwgCPCAZt2fH/gYyogRI9weQ+zD4qOwPEYEFblqYnPeLMMDhWXYsGEuIoXaPqPo2D9fSmEZOXtpS7gzS56xJElMj5U5IJSffYZURKBXAlJYeiWo84MhQKp+HHDTP+w8rDp9YFtbqzsZWLdtsRBMmTLF/aMPH4UIKh507FuTLd3I3c052evm/d1NvwOdg2Mz1hc2nOQfDs4c4x8P0NgKCeaIHNq1a9dZ93Z2HAMxKWrbzTnZvvL+tn6xrJB/iA1AUS5VRKAXAlJYeqGnc4MiwIMZR0Wyh9oP5kA1wqPMDNTGvi/b1sDY+dma73nrJMmWLysLy2M85FDkuH5WhqK/y461qJ/scWPio/9039nP+AyhuGDVooY3x2J6gJrFDKtZOrlclnHR3z6Yp/+/Gah/WONkLitL9s7U32UJSGEpS0ztgyXAj/XO0xYWftRjiBjijZ8dbvFn4cffRzl48GCyffv2hL2X+r3A2JQXs75QMw8xFJzLub/Z7TmttIQuO4ohmyLKlyX0mQpfPiks4c+RJCxBACsL6fqPHDlS4qzmmpLCnE0Rhw4d6kUIlsdwRiaLKksLKt8SYKkCSwtWFzbrYx5QZkIuKOTmTE3YM3/HUvAtwpp40UUXxSKy5AyQgBSWACdFInVPwKwsOJvGYmVhh1tyVviyshDujUOyrCzn3lcwx8LCAxWlhWULX8rjuVcvf8Q2TCQCjL20Yin4Dk2cONHt5qyIoVhmLTw5pbCENyeSqEcCJ06cSDZu3JjrbNpj115OJ5Hc5Zdf7hxFfVwAXxZCY1FcYnor98FioD5RXHDQZflizJgxwWYjRmnBYsbyEMtEsRQsWSwLUauIQDcEpLB0Q03nBE2AhzIWBawsMaz1szSBuRzFxVchTw1MYnrA+WIxWL9EcDEn7IUzbty4IJ1zsR5iZSF6KAZLIsyxskybNi2ZenqfIRUR6IaAFJZuqOmc4AnwYF69erVLJIcJmrfSoiUXFBy+o063tePpwdqxdNv0Oem29rmTtiTYYmmIB6WPgpVl8+bNCU64nchjMpRt2ynHbvs31lZXMad5snAMxQVrAI7RIUa4sMSH5cz8WYyJ1QOxsTZWD9S2qjnlXkIp9xkZZ3Opup0EpLC0c141qtMECHEmrDeGgqLiO8EWOwHDhA0jVTongDMu/hdEc4XmmEvEEHMai+UMJZBlIXiqiEBZAlJYyhJT+2gIHD16NFmzZk00fhu8yWMy50fdR2F5bMOGDS4bMG+7KuUIjBo1ykV0EVmEZSKEwjwSFceSXyxRYCRMxJro6z4PYV4kgx8CUlj8cFWvgRB49913nYNiIOIMKAYOn2yKyDJEkYl+wA46+BKfB97IY/F76GBItTZhjlAs8W0JxdrC0hCKaF5G41rhdHgxFD6WhVAAVUSgDAEpLGVoqW10BPgRx8oSg/MtcHFI5O3TVwp5FJU333wzwfqk0h0BC9FlWYMQaF/KZRnpiADbtGlTFPc5ieTIPcQSW0zZhsvMh9r6ISCFxQ9X9RoQgfXr17vsoAGJVCgKD8A5c+a4FPKFjXr8gkzAW7ZsiWaprMfhejudvC2Eo2MRa3qJiKWht99+2zlVextwhR0TNn7VVVcFnfOmwuGqq4oISGGpCKS6CZcAewvxY57eFNGktQiIotrapeuitna817a8fWJl8fUQxEETKwtZUyl5ctsY7Lui2tql+6m6rV2jqF87bu3qlIXU/ljFiPLyNV/pcQ30mc0uUc7NqbpXLnYt6ydb2/fpOtsm+7e1xX8FxZyNEVVEoFMCUlg6JaV20RJgOQiLApsAUuxHNP3ZjhXVZdrSB4W33qL+ssfT/bPT8IIFC7wlkuNa5GRhJ+f0dU2mvGP2XbYu05ZzKd1yyV47+3dTspBwDgWTbMVNO5IS5sxWDFkW/B0ad/xYcMD1tfzpIOg/rSIghaVV06nB5BHgh/rQoUPOyhKLL8s111zjnDvzxlPFMbIB49sTSzhsFWP20YcpTSgtJJrDIZfPTRWsZlgTzXrWlBydXJd9hWbPnu1VMe9EDrWJh4AUlnjmSpL2QAAz+XvvvReNLwtWlkWLFnl9+8TCgqVFpRoCKCo4krJE1JTSgnJO7iFCnUMvLKHNnz/f7eFk1rfQZZZ8zRKQwtIsf129JgL8kBNJwR5DsYT0YjLHqdNXwcqyatWqMz4Pvq7TT/2apaVJpYUw53feeSeKHcu5v31GxfXTvdcPY5XC0g+zrDE6AvyQ8+ZJdtAYCjk/lixZ4s3KQqIx/B3Iy6JSHQHys6CwNOWfwbKnRYJVNyo/PREVd+ONNwaT08bPKNVrVQSksFRFUv0ETwArC+npSSYXg5UFM/m1117rfCN8wcXXYe3atfJlqRgwlhYsZORqaSJ6iPxDWBMPHz5c8ciq7Y57/Prrr3fRQloWqpZtG3uTwtLGWdWYCgnwQx6TlWXYsGHJ4sWLvVlZUNy2b98uX5bCO6b7L7CQzZo1y234V/fDmHmNxXrGshA5Wepm1P3M6symCEhhaYq8rtsIAZZBMJejtPCjzo8klhfegvnOajte9CNadE7eoHppizxYWXDm9FV4C1+3bl2CT0t6vMhtHIyL1el2abl6GSv8B+q3CVmMQXqM9nmwsfI9eVrYboGImKKxWX9V1+QfspT96WsPJndaDht/+hybh3Sf2XPsPrF6oLY4mN96663KepuGqM+5BKSw5GLRwTYTIMEWeVmoQy/80I8ePdqZzX3l+CChHlYWy98ROpPY5COpXBNZXYmMY16JGkLhCLncdtttCdZEFREYiIAUloHo6LtWEuBNnnBefsz5HHrBH4K8LL6sLDzMDhw44HweLEtq6Exik49duGfMmFF7Yjki4/DZwnoWckGhI8OziggMREAKy0B09F1rCZBIjrwsmM1DL1hZxo4d61KZ+8rvQQI58rLs3r07+Lfx0OcrTz6WRvBnIXKozmKRcXv37q3zsqWvRYp+ooWKlo5Kd6gTWklACksrp1WDGowA/iukMecBHUP2W9b5sbKwvOCjYGXhocZSmbLf+iCcJBdeeGGycOHCZMSIEX4ukNMr9zZLfSijId/npOfHj4X7XEUEighIYSkio+OtJ3Dw4MFk8+bNUSTY4g2dvWpmzpzpLWcFIc4oLPv27Wv93Dc1QBRO0tH7spTljYv7HGti6CHO8+bN87bsmcdFx+IjIIUlvjmTxBURwMqCwsKmiDH4suCUePXVV3uzssCACCoSycnKUtFNlukGxbNufw2cqlFEmduQnW/ZhwllTkUEighIYSkio+N9QYCstzglxrBZHA87NthDaSGbqo8CB5Q4Euyp+CHAsge7cRPqXFf58MMP3bJQyE7VcFm6dKnCm+u6KSK8jhSWCCdNIldHACvLpk2bkk8++SQaKwvLQuPHj68OQqon3sB5uBFBFfLDLSVydB9xLGX+5s6dW1vUECH8KOYhh/J///vfd0kS61Tkort5+lxgKSx9fgNo+InbFJHN4mJ4QPOwIzOozxBZS+uO74OKHwJYyHCiritqCIdbFPOQl4VsuYx7W0UE8ghIYcmjomN9RQCrwptvvumcTUNe47dJ4Q2UEFlCQX0UGBBBRa6ar7/+2scl1OdpAhdffHFyww03eFvey0JmPvFPClUxRxnHsZxIKhURyCMghSWPio71HQGWhN5++20X+smbHg6oRTkheKBbm3RdpOzQD/2l25btPy0L1+HtHEsL4aA+ypEjRxwP8tT0Ijfn1sUlzaFojoq4VzFHRWMtkoXMxVgT6kqYRpQQlsQq5rSII3OQN970/Vs0TxzHj2XZsmXe7uv0tfU5PgJSWOKbM0nsicBLL70UfOinDZ1cHnPmzHFv6Xas6pr9lvBlwc9HxQ8BrGSE8w4dOtTPBVK9omSwMzeO5kVKZKp5Ix/ZMJIEcqNGjWrk+rpo2ASksIQ9P5KuRgL8kK9evTrYH/MsCpxvp0+f7u1tFCsLS2VHjx7NXlp/V0SAfCxYWLC0FFkhKrqU64alPpTQUJf64EFos69tKKpkqb7qJyCFpX7mumKgBHgDffXVVxPS9sdQ8IEg0sRn5lQcNcmUGnKW1BjmaiAZiRhiR+c6Nv/j3n7rrbeCDeMnUmjq1KnKxzLQDdPH30lh6ePJ19DPJUD+kVWrVg1qZeFtGLN6tj63x+ScNnZOXls7Zm2stuPpGp8J3kZJuMUPvY9CGCw8QkkkZzyydd7Ys23s717b2vnWX7a279N1to39TRuWQcitw4OaOfVZSCL3+uuvnwlvNjmszru2fZete21r56f75diYMWNceDPHVUQgTUAKS5qGPvc9Afw1XnnlFeeYmP0hzVNQ0m3seyDa507rMudYW+rRo0e7SBOfe7Dgy1Lnbr9mzcHixXzwkGUJw2pz+MyyNS55c5Jta3+XOcdXW2SZOHGii/yqw5cF53L20AqV48iRI5NFixa5vZdgriICRkAKi5FQLQKnCfDw2LVrV7J+/fooEsnxcCY0lnBQPvsoPNjqKvA3hYUahYUwXBQWahQndiDGr4aoF2tbl3y+roPCybKQz3k02bm/N27cGKwfCyxY6vSVHNE4qI6PgBSW+OZMEnsmwAMRZ9NYEqeNHTs2uemmm2rLmuoZ/4DdozyhuJjSwpIVfhk4CNepWA0oZBdfomzifMs+Q762XTCxCGt+7bXXgs3HwvjhoARyNmOqjYAUFiOhWgT+QoAH386dO13Oihig4Pdw8803990bKdYYfGtQXg4cOOA2sURx4XiMhaUQQpxxpvZZsEq9+OKLwe5Sbo63WFlURCBNQApLmoY+i8BfCFhIL2+jMRR8Wdg4rl8LS0YsE7HzNv4ZoWZzHWh+UDzJrePTidqujwUx5DT9LI2Rj8W3E7LxUB0HASksccyTpKyZAG+hbAKIL0sMhR92loVw3uzXgmUFn5fPP/88wVGYOrZlIvYWwpfFpxM19wfKypo1a4K1RrHMicJCBJWKCBgBKSxGQrUIZAhgXSGiggdf2qGVByMKAg9Dq9Pfp7uhLd+VPcf6tXqg/q0N4aC33357+vJ9+RnWOOcyd4Spp9l3wtF4FrU1qOl+Bzun07Y8oBcvXuw90ysWxBUrVnR8D9v4rC5iUzROjpc5h/2y5s+f7315zOZSdRwEpLDEMU+SsgECvK2TFZTkaTEUHia33nqry2MRg7y+ZWT+2DuHqBgemLEUfDfIYOwrtw4c4PHEE08Ey4UkelialPE2lru2HjmlsNTDWVeJlACRQiwLEY0SQxk3blxyyy23aO3/L5PFg5nMrpZ3JIY5ZFkP64Lv5RD2zgo1Eo5IITb4VKRQDHdsfTJKYamPta4UIQGSleEP8cEHHwT7NprGyl4s+LKguKh8SwB/JPaIYnkoBp8W5hAHap9bLkBm3bp1zk8rxPsEayFh3jghq4iAEZDCYiRUi0ABgX379iUbNmwINgw0LTY/9Dhu8ob+gx/8IP1VX38+fvy4y62zf//+KDiQDJBooSK/jyoGsWPHDqe0VNGXjz6mnt6q4Prrr/e6NOZDbvXpj4AUFn9s1XNLCBAiu3nz5oQf+Bh8IUjvvmDBAllZUvcf88Zu3FgVUF5CLywLESXjU+nEqXz58uXBooABCovvpbFgAUiwcwhIYTkHiQ6IwLkECAMlnfmxY8fO/TKwIzzkeDvFnO7zgRfYsAcVh1wtOFG/9957Lvx50BMabMBD+r777ktYHvJVcEr+7W9/G+wyGan5SaTne2nMF1/1Wz0BKSzVM1WPLSRAmCzLQiguMfhBkDWVZSHyWah8R4BwXiKH8GcJvdx9993ew5ufeeaZYC1OZPwlYuqSSy4JfaokX00EpLDUBFqXiZ8AieRYGiIVfOgFywqhsYSGysry3WzhgEvEEMpn6NlweVizp47Pws7k+GiFWLCszJ49u6+TIYY4L03KJIWlSfq6dlQEUFTWrl3rfCFi8GXhzbSOvWmimsTTwrKsx/IeikvIZcKECcltt93mVUR8erZt2+b1Gt12fuGFFzqFG8VbRQQgIIVF94EIdEgAJYUfd6wsob+dM6TzzjvPvaGTz8JnErIO8QXTjCU9NrdEaWHzxFALfiwPPfSQ10gh7meUlhAL/juzZs1KrrzyyhDFk0wNEJDC0gB0XTJeAigqr776qkvXH4OVBR8WlhbYHFHlOwJEyLAsFOpyCJIS0uzbj4Xxr1y58jswAX1i/CjbLAupiAAEpLDoPhCBkgR4KyX7LVEnoRf8V/jB5y2VHC0q3xLAyoKljIgh/FpCLewrRD4WXwUnZBxvQy348KBwy0IY6gzVK5cUlnp562otIICV5cUXXzyTrh9FgAdgUZIvLDHWxuoybbs5J92/hYeyoZzKdwSI+ELxPHr0qJu7Xucpzfy7q3y7b4/NYbYe6Bz6IDx90aJF6e4q/YzS/dRTTyVkdM6TJY+JjSGvPcLlndNtW/xXUFhI1a8iAlJYdA+IQBcE8H/gDZ0f59ALvhAk4CIDbtGDI/Qx+JAP51v8Nz755BMf3VfSJztw33XXXZX0ldcJCsvzzz8fbBZn7lkUFjZDVBEBKSy6B0SgCwLkZeGHPoYQZ4bHsgKJ5PTD/91ko2yieL7//vvBJpLDsvDwww97W84jeRybIB44cOA7MAF9IlKKSDdZBwOalAZFkcLSIHxdOm4C+D+wpBBD4cHH/jSkO8ekr/ItgfSyUIhMsIjdf//93rK94r+zZs2aZOfpqKkQC07jCs0PcWaakUkKSzPcddUWEMC68txzzwUdGpvGPGnSJLfH0JAhQ9KH+/oz0ULk1jl48GCQHFBYbrnllmTy5Mle5ENhQenGyhRiIdstCosyNoc4O/XLJIWlfua6YosIkOYdS0sMhYghHn6XXnqpfFn+MmH4cLz++uvB+rGgsOB/5CvjrUVLsTQWYhk+fLjbYgJlW0UEpLDoHhCBHggQYfLHP/4x2P1YskMj6oIHoM9N9bLXDP3vt956y22KGGJ4MwoLydN85SJBYSFMHwYhFnYeZ08snG9VREAKi+4BEeiBAD/4vJ2+++67PfRS36n4spDuXSb275izHLJp06Ygl/ZQWLAu+ErRj+Mxe2StWrXqOyABfcJJXApLQBPSsChSWBqeAF0+fgJffPGFs7KEnOY9TXnatGnJzTffLOfbv0AhrPnNN990ewylOYXymQiZBx54wIs4KCx79+51kUJeLtBjp1gCsQhefvnlPfak09tAQApLG2ZRY2iUAH4QpHnfunVro3J0enF8We65555k1KhRnZ7S6nYonK+99lpy+PDhIMeJkzShzVhbfBRCmgnRD7GQ4RaFRfsJhTg79cskhaV+5rpiCwnwo0/22xg2RQQ/b6ykfVdJ3BYLK1asCDZSiF2L/+Zv/sZbtlcipZ5++ukgbwWU6wULFkhhCXJ26hdKCkv9zHXFFhIgkRxWlg8++OCsN2FM7pbKPFsXvTHnnVOmLdehj7xCP7aNAG/tSiT3LSUcp1kaybIfjGMdc8qu2/fee28ycuTIvCnt+Rj7CT355JNn3bfWaZYH946Nucw92W1brr9w4UK3CaLJpLp/CUhh6d+518grJsAD75VXXnH7slTctZfuZsyY4XxZvHQeWacsCZE8jQdyaAVH6WXLliWk6fdRiHR79tlng71vcbqdOXOmfK58TH5kfUphiWzCJG64BI4fP+6ScBF1UfRmHpL0+Aew1ECui34vhPViHSNVfWgFx9MlS5a4LMU+ZAtdYWFLCUK7tWOzj9mPq08pLHHNl6QNmABKyq5du1zECUtEoRdM+1dffbVzaiwy2Yc+hqrkI9vrli1bnD9LVX1W1Q9LQkR1TT29c7OPwiaQf/jDH5JQ71ly0KCw4M+i0t8EpLD09/xr9BUTwB+A7LcoLjEU/CKWLl3qba+aGBggI8oKPkinTp0KTmQUFvw4rrjiCi+yYRlcvnx5gqUlxHLdddc5hQUOKv1NQApLf8+/Rl8xAXwgyBzKGzsRQ1hdsF4MVKdFqLKt9UX/9jlb8xC45pprkrlz5+Y6XaZla/PnHTt2uGyvRXOWHnuWYdHfnFP0Xfb4QP0zR8wPfhw+CgoLTsdEC6WXMrMyFv2dlqmojR0v09bOMYVF2ZnT9PrzsxSW/px3jdojAfJ54BNBQrJOFRUTx36kqS0iI92HtUvXZdtaf9b/6NGjnY+EryiUtKyhfsYixq7FJP8zLsaJOl26naN0f9ZHul/7bN/ZvPKg5qHNPx8FhYWQfPLRZMfK9dLypMeQJ0u6bVUcWQ5i7FJY8oj31zEpLP013xptDQT4oWaJIdR071kERKFce+213varyV4vxL93796dvPHGG0Gm58d3gwc2zqc+CruOo7CEumO13Zvcpyr9TUAKS3/Pv0bviQDm9dWrVyf79u07k7fC8ldYzdtoXuEt1tpYXaYt5+S9KXMt+rE3X6tpO378+GTRokV968uyZ88el+2WJSHjQl2Ge5m2ZeYVhQXHU58Ky0svvZSQ/DBb8u7FMrL32pbrsxTGkpgUluzs9N/fUlj6b8414hoI8LBjU8T33nvPOXLyw8sDLa9Oi1PUxo5329bOs36y9QUXXOAeiL78JOz6odYolitXrnQWlirnyMab5Z3929pRZ79DYWFZZN68eelmlX3GwoLCsn///rP6zMpR9Hf6pKI2drybtvhYoayR8VelvwlIYenv+dfoPRKwPWpCNbWnh84DZfLkyckNN9zQl3lZPvvss+Tll19OeHiHVsg/gsJCAjUfhTGjrH366ac+uu+5T0LvsbBIYekZZfQdSGGJfgo1gFAJ8Ka+bt06tykiGySGXngg8FDsx43mzMISYi6SOhQWlDWUthALVj8sLFgBVfqbgBSW/p5/jd4zAawsODSSnyWGMn36dLfZ3NChQ2MQtzIZieh69dVXg0yeVpcPS3ZJqDK4PXYkhaVHgC06XQpLiyZTQwmTANEn5Gb55ptvwhQwJRWbIZKkbOrprKosE/VLIUqI/YQIaw6toLCwJILjrY9ieVhCXbpkOQwLi5xufcx+XH1KYYlrviRthAR4ELzwwgtB+kfk4bzqqqucg+eQIUPyvm7lMTY+DDmsGYdbn3lYSBwnhaWVt3arBiWFpVXTqcGESoBdnLdv3x6qeGfJNWLEiOSmm25ym+31i5WFDSsJQw/RwmKp+XE+9VGwsKxYsSI5dOiQj+577hPLEv+UOK5nlNF3IIUl+inUAGIg8Pnnn7sN5sjzEUPhbZ6HRL84OpLoDwfpEOeHBzWbH/rcS+j55593mW5DvDdZDuKf9hIKcXbqlUkKS728dbU+JkAkhllZuslL0c05adx2flGdbnvRRRe5dP1jx47tC18WNj7kH9FcVeZhKWKdPZ5mn/0OheXWW291fkXpdlV9Zrfm3//+9+c4hmflKPo7LUdRGzveTVuWw1BY8OVR6W8CUlj6e/41+hoJkEn0D3/4g0skZz/gViOGfR6sLtOWvih5D+Gi69CeDKU4euLw2A+m+LVr17okfzhGF7HqhmMR4+xx+s4es79xNl22bJlboqNd1YVdmp955pmEpSG7Jtewz4PVZdrSF6WIcd5xQu1RWAjvVulvAlJY+nv+NfoaCfBjjJWFnYFjKKNGjUqWLl2asDli2wshzVi/QozkQmG59957kzFjxniZBhSWp556Kkj/HQZMMkOWKE3Z8QJBnUZBQApLFNMkIdtCgGyiy5cvd1aW0MeEleX66693VpY2v92iSD733HPJ3r173Zt/aPOCH9FDDz3kLQMxOYIef/xxt4dSaGNHHhzAsfSpiIAUFt0DIlAjAXwkeJsnKiWGgi8Lb/fkZ2lrwdGWpbpQw3rJQPzoo496W5ojOuh//ud/gpxe/FZuvPHGhP2EVERACovuARGokQBv87zJE0Z66tSpGq/c3aWwsrT9DZcHNnlIyEocYmFp7pFHHvG2JEKG2yeffDLEobsoNe6/ftwuIsgJaVgoKSwNT4Au338E2Gzu9ddfT0hWli0oNCgJ7PZsddrpMduev4vOqaItfWBl+fGPf9xap8c9e/a4LLcsjRhzq4v8Jsoytzm0fq3upP8JEyYkDz74YN509nyMcbAtAVFCnchSRu50W65Ttn/OIXkhId2XX355z2NVB/ETkMIS/xxqBJERQBnZtWuXs7LEIvqSJUtaa5bfvHlz8vbbbwe5jxD3x9TT2yTcfffdXm4V7kWWJ9nvKsQyfPhwZ+GbNm1aiOJJppoJSGGpGbguJwIQ4G0eK8vHH38cBZCRI0cmP/rRj1qZvIssxKHu9YRVgggZlkV8FBQWkuZxL4ZY8J1i7GzKqSICUlh0D4hAAwQInyWMlg33QgylzUPSRisLTtDs8xSq4ojCAndfafm599avX++y/ObNedPH8N9BYZk8eXLTouj6ARCQwhLAJEiE/iSAs+eqVaucD0EMBHh4EF7bpkRybJlA1BaOpyEWFJb77rsvmTRpkhfxUFjWrFmTvPvuu17677VTMi2jsIwfP77XrnR+CwhIYWnBJGoIcRL405/+5LKrvvnmmwmfQy+EmPK236aIjffffz956623EtLTh1hQWB577DFvYeXcd7YkFuL4L730Uqew+EqaF+KYJVMxASksxWz0jQh4J/DZZ5+5XYJJKBd64eE5ceLE5I477mjFpoj4b2Dhwocj1GU5ksb94z/+o4te8nF/sCRGWv5QLUxTTzscY2HBh0pFBKSw6B4QgQYJ8MDYuHGj23gvhrwsJDHjAXLVVVc1SK2aS5vjMxFboZZx48YlDz/8sDfxuOd+/etfJ4Tah1iw5pE4bujQoSGKJ5lqJiCFpWbgupwIZAlgXeFNnxorhuWsKKo5v+i77PH0tbLfFf09UP/IN2XKFLcZH3vcxFzIg7N69WqXMM4H9yK+Rcez3Pn72muvdTs1++J88uTJ5N///d/PWJjgQCmSseh4mXPKtJ05c6ZTkNvkN8X4VbojIIWlO246SwQqI4CVBT8W8oGYL0v2ATrQxcq0tX7KnJNtS26M2JN5wZzcK1i3jDlssmM1Xnl1L23t3Lx+08dYfvPpM/Tll18mv/rVr86MO31t+2yyZmv7Pq+uqu3s2bOdwtLmvazy+OlYPgEpLPlcdFQEaiVAttU33ngjIWol9EIGUzKP4oAbq5UF3yGsWvv27Qsa9z/8wz942/SQgZPl9umnnw6SAUrPvHnz3JJQkAJKqNoJSGGpHbkuKALnEuAtn+RdH3zwwVlv/Oe2DOMI6fqxskw97RQZW2FZA2sWCkvauhLaOFgG+fnPf16Y0r4KeXE4fvnll6voqvI+GD+7hc+dO7fyvtVhnASksMQ5b5K6hQR2797tEskdPnw4+NHx9ssOuosWLYou+y2bHOK7kreXU0jgUQbJweKzkIMm1BwsONouXLiwtVtC+JzXtvYthaWtM6txVU7g+PHjLmnaeeedV3nfdEiY7fPPP+8epHwOvZBIDoUlJisLXMm9snLlyjOOpqFyvv32253TrU/5nnrqqYTlyBCLZblVWv4QZ6cZmaSwNMNdV42MAMoKPib4brARGxYGH2XHjh0ukRdhpr3udpsnH8sh1q/VRWNJR4Sk29px+sdcz1uwLyUubwy9HCO7MFYFe0inx16WjTGxOt1XWkbjle6ftnY83Tb9+dFHH018J0z75S9/meB4SxlIfhuj1QO1tbGl2+aN1Y6luaTPYeyLFy9OSB6nIgIQkMKi+0AEBiHADyq+JaQwJ3Eavhtse++jkMDs2WefdQ9Urht6IU8IVpYYHirkHNm0aVOydu1apyzANlTGRGL99Kc/9boNApFS//Zv/+YseyHeZ2xHgGP36NGjQxRPMjVAQApLA9B1ybgIYO3AQZOlBNLT33vvvW4ztqK3zF5H9+GHHyZ//OMfkxgSyfFGvGDBgmTOnDleH669MmUpiA0OX3zxxWCTpKXHSCjz0qVL3f2WPl7lZ7Lb/uY3v6myy0r7uuKKK5LbbrutFVmVKwXTx51JYenjydfQByfAGzgKBAqLOcOS5dVnSC+RK08++WRC6G0MBSsLPKhDLQcPHnRLbaGHMcMPRZj8KzNmzPCWkp/rECGEAhdigQE7VKOwKAdLiDPUjExSWJrhrqtGQgDrCpvjsZRgywekp7///vvdA9qXlYUlqBdeeCFYc316+nigsExGVtYQfVnwP8JvZfv27Wmxg/3MciPp+HE69VleeuklF97t8xrd9s09RdI4fFhURMAISGExEqpFIEMABQXnTHazxVkzXQjpXbZsmbc3YPwLfvvb356xsqAYIY8pSPa5kxq50+cPdg7tB2tj31vb8ePHJ3feeaf3hyzXK1OwipHR9r333juj/BkL+rHPndS0t3F3UpfpP9122mmnbu4tX35SXIvCcpBtupkdP99njxX9XaYtfVAG48emjyw1KgeLw6X//IWAFBbdCiJQQODEiRPJO++8k6xfv/6cEFiSWv3d3/2d1wc0VhbCnCn2sEiLaseK6nRb+1zU1o5bO2o7VlSn2/JGfOuttzozPn4+IRSyBrPlAUt6ODPbOPJks++K6vQ5RW3seLqtfbbvsrV9bzU+QSyvsYeOT45fffVV8otf/CKhpphcJke6tu+ydbqNfc62yf5t7aiz36X/HjFihHPmxo9FRQSMgBQWI6FaBDIEePtkWYZEY3kFR1Me0r4KTrdPPPFEgv9FDIVIIRySm95Zl7d3Us6vW7fO1SgrsRQyCN99993J2LFj3QPdl9z4Rz3++ONnrE6+rtNtv4yfPDQh+0V1Ozad1z0BKSzds9OZLSaAsrBhwwYXAluUxI19dMiV4dPXgKUMIoZiKFhZ7rrrLperBktBEwWLwdatW90SEMt4RXPXhGydXBNHU/yBhg0b1knzrttwb+PXg3IXYiGk+Z577vG+LBbi2CVTMQEpLMVs9E0fE8Cq8rvf/e5MZFARCtbYMeH7KjiMEjGU9aHxdb1e++VB88ADD9TufItisnfvXqdkUqO4hPowLmKMwofvCiHNvhU+lhq3bdsWJCOWhlgKQmHhs4oIGAEpLEZCtQj8hQBhxRs3bnSZbQd76OHL8thjj3nbUZflDCKUeBuOofCAefDBB5PLLrusFnFRVPBVwc+IvYFiVFQM1IQJE9wSI8shPgvM/vM//7NwqdPntTvpG98dfHgIaVYRgTQBKSxpGvosAqcJEMrM+r6lLB8ICm/ChF/69GVBjqeffrojeQaSta7vpkyZkjz00EOVvx2jPNo/oqhwSmb5xyJd6hqfr+vccMMNyfz5870n4CNhHHsI4VQeYiFtANs9KEIoxNlpViYpLM3y19UDI8ADEYvGyy+/3LFkpFH/8Y9/nBDZ4KOYPw07DA9m8fFx/W76/Nu//duuHSZNKeG6WAP4++TJk25ZDAdkQs2xqqC0tKVwD6H0sleV78LuzK+99lqwmZT5/wiH26mnd6tWEYE0ASksaRr63PcEWFLAusIDsdNCsrTrr7/evRX6WnMnqgO/g06sPp3K7bMd0S4scZQtKCcoIvxDUUNROXbsWMIyXVsL9wzZk2+66SZvSq+xg+/y5cud/wrKYIjlkksuccuKKHEqIpAmIIUlTUOf+57A5s2bu4rK4UeW7LcjR470wpAHN34aZN0N9UHjZeB90Clh4EQGkYzQl8JrGFkGIiFhqKHyjB/HbSx0vlkYE9XxEJDCEs9cSVLPBLCukPfkwIEDpa9EZk6sLPzz9UPLUgjp1GOJGCoNsQ9P4F6ZdjqzLZFmWKV8FxyT2T/o6NGjvi/VVf843M6aNUsOt13Ra/9JUljaP8caYYcEcOBk2QULBg8SzOdZ5cOOZWsuwZsheUh8WVlsXyPLvJuWMSuP/Z0euh0rqsu0tT7KnFOmbbp/+zxYXab/Mm3tupxjnwerO+2f9Ps42+Jgmr3X0n1U9ZlNPMnejHKed/+krzPYGO37MucM1hbFn+ggooRURCBLQApLloj+7ksC+ExgKidDKiX9Y54GYj/SeTXJvm688cbkuuuu8/bw4Q2ZEGdM+mkZ8+TJPgCL2tjxTseZvm6Zc8q0Tctknwery/Rfpq1dl3Ps82B1J/3DEesKD2hfSm5aDnyCnnvuueSjjz46Rym38aTb27HB6jLnDNaW5TEizJThNk1Kn42AFBYjobqvCRAiu2LFijORE0UPZYPEjzghzVhj0jVRHkR7+IoYwsryxhtvJER6pB8kaRnMQmSypus8uRlrXslra9cpc05VbW1OTAarq+rf+rO6qF9jlcen6Jy8tua7whJI0Xl2rSpq22qCJU8bo9VF18+Tu5tzOumfMZI1mrxG5DdSEYEsASksWSL6u+8IYB5/5plnko8//tgpAQDgB5Yfa6vzjtl3VtOGyIZFixZ5M2kjE8oVSgsRQ3btohqZrBS1sePWjtqODVaXOadMW7tuW2VhfCTXYwmxrr2X2LWazSBReo1vtu52juy8bH/Zv61d0bzOmDHDOa+n2+mzCBgBKSxGQnXfEkABwJmVH/JeCz/Q7AezePFib9lvSddPnphQU6v3yrAfzkdJufPOO5Pp06fXMlyUcvak4l5H6Q2x2I7fShgX4uyEIZMUljDmQVI0RIDU91hX8A2pKlyY5SCWhXhb9FF44LApIg6UoUZ7+Bh3W/pkSYUQ5jvuuCPhIV1HYX+llStXBp0VmAihv//7v09IEaAiAnkEpLDkUdGxviGAAyLWlcOHD1c6ZtL1kwjMl7kfKwsJwHbt2hXsG3OlQFvUGffET37yk1ocbQ0bkUFr1qwJNh0/csLln//5n91ylcmtWgTSBKSwpGnoc18RwLqCsrJly5bKM6mSU4Odd31uArhhw4aEdP1VLGX11cQ3OFiWDPFbufbaa2uTgvvjlVdecfd5bRft4kIspd53331dnKlT+oWAFJZ+mWmN8xwCWFf4IS+Thv+cTgY4sGDBApeun83cfBSsLGyKSPRHqH4JPsYda58oK1NP74/z8MMP1zqE3bt3u/ucTQ9DLvfcc0+tilzILCRbPgEpLPlcdLTlBMi78vrrrycbN26s3Lpi6EaPHu3epi+99FJvZm5S9WPqx6lSJWwC3A+knK8jo62RYA8m7hEscVX5aFnfVdb4r/zsZz/zlg6gSlnVV3MEpLA0x15XbpAAIcxYV9hU0GfBj4V0/eeff76Xy+B7g5Wlm+0EvAikTnMJYGVjKeiKK67I/d7XQRIMkmgQa2LIBaX+pz/9acgiSrYACEhhCWASJEK9BMj4uXbt2oS8FL53ASbigXV5apYEfBTGQsQQPjkq4RFgN29CdVFe+VxXwaLy/vvvu+ig0P2cSANAlmgVERiIgBSWgejou1YSIP0+1hVCPesohDjPmzcvwezto2BlYdPGL774wkf36rMHAoQtX3XVVS4vj6/sx0XiHTt2zCmyLHuGXCyceezYsSGLKdkCICCFJYBJkAj1EcC6YiGefMbqgcPqYDUSDtYm/T3tzRGWH2L2R/G5XwyZb/lHScthMmSPDfQ3fXTChD7KtA1NlrLylx0r/U897WSL9YC9cex6fHn3UAAACrdJREFUDprn/8Ca3b3ZzLOTjMjIZnPezTjLnJNty/8fpOP3pdB7Rq3uayQghaVG2LpU8wTwWSGUGSuLPUCRKv2DbT/c6e/Tkpdpy3kkClu6dKnXHXlJIPfLX/4y4a3a5EvLbJ/tu2xt3+fV2bb2d51t7Vp27Wxt36frbBv7O93GPtt32dq+z6uzbe1vazthwgS3TcOUKVNqSxBn18YJe926dYXOtiZrtrbz03W2jf2dbmOf7btsbd/n1exWfcstt7j/T/K+1zERMAJSWIyE6tYTwF+FTQPJ+EmUECX7w5r3dxpMWpkp0xYfFt+bumWtLGm57XO38pcZa15bu67JQW3Himpfbe16PvtnvvFZYTPMOv1WbEw42+KMfejQobMsOzb2otrOpy5qkz1e5py8tiTRmzhx4llyptvpswgYASksRkJ16wng48F+KqThr7tgZbn99tuT+fPne7s0VpZf/OIXycmTJ71dQx0PTmDYsGEJVoPrrruuEWUFZRyH8tdee+0sK+Lgktff4uKLL04effTRBGYqIjAYASksgxHS960gQAQNG78999xzjUXT4HT585//3NtaPVEhPKSIGlJphgDp5UkY6NPJerCRHTlyJPn1r3+dUIdeiAzi3w9/+MPQRZV8ARCQwhLAJEgE/wTw7VixYkWyY8cO/xcb4Apk8+TN21fBwfI//uM/lEjOF+AB+r3gggtcZuOFCxc25o+B0orCiuIaemGp7JFHHkl8JlYMnYHkK0dACks5XmodIQHW3ElP/pvf/KZx6UeNGpX80z/9kzcrC86WJApbv35942PtJwFIDEeCQPxWmiwo5iwLnjhxokkxOrr25MmTExT4OjP/diSYGgVLQApLsFMjwaoiwEOcpaBt27ZV1WXX/fBWeffddyfXXHNN130MdCLKGXsLPfnkkwl7Dan4J4D/BYoKyeGaLFhXXnzxxWiU1dtuuy2ZM2eOloOavGkiu7YUlsgmTOKWJ0AI83//9397z2rbiWRE0BDmSl4WX+n6yWpKxBD5ZlT8EWAu2R8IZ+rp06f7u1CHPZMI8b/+67+CuM8HE3nIkCHJgw8+6P5fGKytvhcBIyCFxUiobiUB3jp/97vfOYfbUAbIj/WyZcu8WVkYM3vHYFUKPSV7KHNSVg6UTXwvyB8yfvz4sqdX3h4r4lNPPZXs2rWr8r59dIiFccmSJV6TKfqQW302S0AKS7P8dXXPBEgUR0K1kPbZIcSZTfBYGsL3wUchxJndqDdt2uSj+77uk4zFV155pYsE8pm9uFPILANiTXv55ZeDus+L5CciiO0qcD5XdtsiSjqeR0AKSx4VHWsFAX7In3nmmWTr1q3BjYcQZ9bwr776ai+yYWVh3GT1lZWlGsTsC0SK/VmzZrn9gYgKCqGglHOfkyQuhkKSODI/kwlYRQTKEJDCUoaW2kZFwNb0LattSMLbpnh33HGHNysLifLY5JEde1V6I8AyHlaxmTNnugdtE9lr80bAUhDJELds2RKFdQXrInlqcFIOReHL46pjYRKQwhLmvEiqCgiQmpwfcko6XXy6a6ww6e+K/uacou+yxzvtnyyfvGmSvt1HYRmMnXrJyYGVpdNxmizZcWX/tnbU2e+K/i7b1q5R1F/2eNn+s+dn/+YBO2bMGLd8wTwNHz68sRwrxsJqZGXJjzD29B5SefNclkv6Gnn9GSdr12n/hDBjWWQHa/pVEYEyBKSwlKGlttEQ2LdvX/LEE08EHdrL+v3s2bPder6viCH2lMG3oemEedHcOClBsaoQdou/CtFAoWVjJfqNucWSyBJgDAVFBSU9BN+fGHhJxrMJSGE5m4f+agkBzOQ4ImJlSL8h5g3P3hapeaPmx7/onDJt7VoDnTN27Fj3xukrLJaxsK/MqlWrzrKyDDbOPNmLmOS1Haz/gZgUvXmXOafbtoyF5boZM2a4fZ+wrqBMFslkY6+7xqLCch8WRDb1tLnxzd2uU8RjIO4ogCwFkWAPOVVEoCwBKSxlial98ASwrhDKjA9H6IUf7ptvvjlZtGiRtx9xnDJR4D7++OPQcTQuH8s+pNYnVBmLStGDuUlBUcLXrVvnlNCYNrqcNGlScueddzrH5Sb56drxEpDCEu/cSfICApjJsa6cOnWqoEU4h/GJIMSTyBOfBQsLe8zE9IDzySPb99SpU5PFixe73Cqhv/1/+OGHLvqL5b5YCsufbAhJ/iEVEeiWgBSWbsnpvCAJHDhwwIV47t+/P0j50kLx9s7SAz/ivtf04UEiOaxP/V7gzgOUHDgsxeFHxNIcS0EhF5Zb2HZh5cqV0SSIM55YrNg3KIQkeyaT6vgISGGJb84kcQEB/DWIiMFng3DP0Atr+iwHEeZZR3nhhRdc1FCIYd51jJ8lHvxR2IASR1qWf1AUQ1z2yfJAWTl8+LDbciG2ZIAohySJu+uuu6JgnWWvv8MhIIUlnLmQJD0SwLqyfPnyZM+ePT325P90HpKXXXaZy3bLA7SOQjTJ73//++Tzzz+v43KNXwOLCQoKiiH/2B142rRp7i0/dGtKFh5h6Sjia9asiWKvoLT83N/3339/QsI4FRHohYAUll7o6dxgCJgj4urVq6PI7MpyxA033OAsLHVB5C0dhY43dCJL2lRsmYdkZEOHDnUKCv5BLPWw5w/RPrzpx1jwxcIniw0tY7AcphmjGLJvEApLDJastOz6HB4BKSzhzYkk6oIAVgMiYXBIDL3ww81D9K//+q8TksfVWbA+sUkeew3FWHgAonhgOWGJBwUF5Q8lhX8oKZdccolb9sGqEvtDkmVOlBWSw8XoMM2S2wMPPOCsWzHeb5I5LAJSWMKaD0nTBQF+1NevX38mo2sXXdR6Cg9brCuEMtf9QIUV+TtQ8LC4hFbgwT9bsiFiBwWFVPgoKPzjb5QUW+4xi0oo6fKrYsr8YA17+XTUW4z7QTGP5Fxh+4m67/Oq5kD9hEVACktY8yFpuiDApm/8qMewZw4/3FgAfvSjH7nsqV0Mt+dTSDoW8tICjCy0mBrlBWUERcWO9wwh8A5QVlDCWQY6cuRI4NLmi4e167HHHmvsPs+XSkdjJiCFJebZk+zOSkC2T5aDeBCHXnj4kpjs9ttv11tn6JPVkHxmMcQfi8igWAt7BhEFJ+tKrDMYntxSWMKbE0lUggA/6IQyYzoPcYkjO5QRI0a4t866IoOy19ffYRPAGZoEf/it4GcUwz2dR5RNDn/2s59524k875o61n4CUljaP8etHSE/5jjZPvvss0FvcpieANb0lY8iTUSfjcCJEydc2DI7bOOzEquywnhwKGfjSBURqJKAFJYqaaqvWgnYBnAbNmyo9bq9XOxf//VfvWe17UU+ndsMAawp+Kts3rw5aP+iTuiQ7+aRRx5xEVydtFcbEeiUgBSWTkmpXXAESIT2+OOPR+G7Ary5c+e6N8/gQEqgRgmwJ9BLL72UbNu2rVE5qrg4jtE/+clPkilTpsh3pQqg6uMsAlJYzsKhP2IhQE4KwnPfeuutKETmh/xf/uVfEtb2VUQAAvirsIM2OVZiyM482KzhXMs2E0uWLJF1ZTBY+r4rAlJYusKmk5omQBr+X/3qV9FYV+bPn+82f1PERNN3TvPXxzfl+PHjydatW6PJHdQJNbIKP/jgg8m4ceM6aa42IlCawP8DAAD//wCRGVAAAEAASURBVO3dibc8RXk+8Eb2RRYRBBT5AiIIouCGPzUE9y3RmJiT5SR/Wo5HTzwnJ9G4xC2uuBKjxgVlR1AWFRRUFEFcft/PaF2bYebeqZ7pmZ6e5z1nbs/tqe6ueqrqrafe963qI35/WJpIENgiBH772982n//855svfelLW5Hr4447rvnHf/zH5qyzztqK/CaT/SGg7d53333N17/+9eb6669v/D8GOfbYY5trrrmmed7zntccffTRYyhSyjBABI4IYRlgrSRL+yLwwAMPNO9+97ubn//85/umG8qPV1xxRfOa17ymodQju4vAz372s+aOO+5ovvrVrzY/+tGPRgPEk570pOaSSy6ZEJbTTjttNOVKQYaHQAjL8OokOToAgU996lPNdddd1xxxxBHNtIGwnDvo2H5EX2k946STTmre+ta3Nuedd15DsUd2D4Ff//rXzb333tt8+9vfnnx+85vfTEAo7a6NSDl30LHmmr7SljyeccYZzStf+crmWc96Vtp4G+x8XzkCISwrhzQ37BOBhx56qPmXf/mX5he/+MUeYSmK03PL94OONWnLvWqukZY8//nPb171qlc1J5544h9O5O/OIPC73/1u4v655ZZbGh+uIOdKe5o+Amb63Lz/+0pbnrfo/Y8//vjmpS99afPCF74wFkSgRXpFIISlV3hz81Uj8IUvfKG59tprZyp2z2JxKUp3v2Nt2lKORe8v3QknnNC8+c1vbi666KLMPAuAO3BU9z/96U+bm2++ubntttsm1hVWlnZ7nNX+Zp2b195q0xbY591v+vwi91ceriDWlbiCCsI59olACEuf6ObeK0WAVeUd73hHIxagKP/9HlDSlOOq0pb7lPuWYzlfjpdddtlEmZ966qnlVI4jR+CXv/xlc9NNN00sKj/84Q+bhx9+eM9t2W4n7e/zIClpynFeOudLmnLcL235raQtx3J+1rGkKUdpuIJe/epXNxdeeOHk+bOuy7kgsEoEQlhWiWbu1SsC4lY+85nPTMzqvT5oBTdnKn/961/fXHrppbGurADPod/iV7/61SQ+BVn5yU9+0iAurBZjFdbDq666qnnJS16SVUFjreQBliuEZYCVkiw9EQEDwDvf+c7GCqFtkIsvvngSu3L66advQ3aTx44IsKB861vfar75zW824qseffTRURMVMB155JGN9v3GN76xQcwjQWBdCISwrAvpPGcpBFhX7L0iFmDoYh8KpvIXvOAFsa4MvbI65I/l5J577pkQlRtuuKGx6qes/Olwu626hEvozDPPbP72b/+2iatzq6puFJkNYRlFNY67EGax//qv/zpZZbENJT3//PMnhCUbxW1DbR2cRwTFh5XPah+bvpUVPwdfPa4ULCpvf/vbJ8v0x1WylGYbEAhh2YZa2vE8fuUrX5lYVxCXoQvrystf/vLmZS97WawrQ6+sOflDTorV5JFHHmnuvvvuyYqfu+66a0Ja5lw2+tNcQVYEWcYcCQKbQCCEZROo55kLI2BW+4EPfGCyQ6iBZOjyzGc+c7Kr7TnnnDP0rCZ/f0TA3igICnejj9VoSMqdd945cf2IS9l1KbvZvu1tb8uKoF1vDBssfwjLBsHPow9G4Bvf+Ebzuc99biu24T/mmGOaF7/4xc3VV189CUw8uHRJsW4E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" alt="DR.HAO 白袍人生學院">
+  <div class="eyebrow">WHITE COAT LIFE ACADEMY</div>
+  <h1>白袍人生學院｜2026 高峰年會<br><span class="accent">夥伴回饋牆</span></h1>
+  <p class="sub">
+    復盤過去，展望未來。<br>
+    這一天，82 位白袍夥伴，<br>
+    說出了他們的行動與收穫。
+  </p>
+  <div class="stats-row">
+    <div class="stat-pill"><div class="num">82 位</div><div class="label">完整填答</div></div>
+    <div class="stat-pill"><div class="num">97.0</div><div class="label">平均滿意度</div></div>
+    <div class="stat-pill"><div class="num">FB 29 篇</div><div class="label">公開分享</div></div>
+    <div class="stat-pill"><div class="num">IG 6 篇</div><div class="label">公開分享</div></div>
+  </div>
+</div>
+
+<div class="toolbar">
+  <input type="text" id="search" placeholder="搜尋姓名或關鍵字...">
+
+</div>
+
+<main id="wall">
+    <div class="card card-dark" data-name="Y J" data-text="制度是告訴大家怎麼做，文化是告訴大家為什麼做 陳冠仁醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">制度是告訴大家怎麼做，文化是告訴大家為什麼做</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">Y</div>
+          <div><div class="author-name">Y J</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1HCQJ482fR/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="王仁昌" data-text="Say the right thing right 張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">Say the right thing right</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王仁昌</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1M4RrUPTDo/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳易儒" data-text="心力其實就像一杯水。當我們一直把水倒給別人、倒進很多事情裡，甚至想灌溉整片沙漠，卻忘了回頭替自己補水，總有一天還是會乾涸 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力其實就像一杯水。當我們一直把水倒給別人、倒進很多事情裡，甚至想灌溉整片沙漠，卻忘了回頭替自己補水，總有一天還是會乾涸</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳易儒</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/r/1DEUhRFFtc/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="吳俊諺" data-text="一模一樣的制度,換不同的人來做,結果天差地遠 陳冠仁醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">一模一樣的制度,換不同的人來做,結果天差地遠</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳俊諺</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BbpLo5Z4P/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="沈冠霖" data-text="心力，就是你只有一杯水，卻企圖倒滿整個沙漠。 學了這麼多道、術、法、器，別忘了回頭檢視自己的 Day 1 初心。先學會暫停、回填心力，我們才能成為那個最受歡迎、走得最遠的 &quot;Doctor Right&quot;！ 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力，就是你只有一杯水，卻企圖倒滿整個沙漠。 學了這麼多道、術、法、器，別忘了回頭檢視自己的 Day 1 初心。先學會暫停、回填心力，我們才能成為那個最受歡迎、走得最遠的 &quot;Doctor Right&quot;！</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">沈</div>
+          <div><div class="author-name">沈冠霖</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1Ckftw66Sj/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張耀文" data-text="心力 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張耀文</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="李浩銘" data-text="先對頻，再開口 張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">先對頻，再開口</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李浩銘</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BTTUgaAAH/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許耀家" data-text="運用山達基的情緒度（能量位階），適時調整，以高於那個人0.5到1.0的情緒度去跟他溝通 張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">運用山達基的情緒度（能量位階），適時調整，以高於那個人0.5到1.0的情緒度去跟他溝通</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許耀家</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1CudWZPH2M/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="胡怡萱" data-text="要保留自己的心力，知道要去哪裡 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">要保留自己的心力，知道要去哪裡</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">胡</div>
+          <div><div class="author-name">胡怡萱</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/skindrhu/posts/1633491128779860" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳韋閔" data-text="無論目標的大小，要更在意為什麼要開始 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">無論目標的大小，要更在意為什麼要開始</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳韋閔</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="周建存" data-text="制度是告訴大家怎麼做，文化是告訴大家為什麼要這樣做 陳冠仁醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">制度是告訴大家怎麼做，文化是告訴大家為什麼要這樣做</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周建存</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1Ae6788zzX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="林紘毅" data-text="讓對的人，被你的價值打動 " data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">讓對的人，被你的價值打動</div>
+        
+        <div class="author">
+          <div class="avatar">林</div>
+          <div><div class="author-name">林紘毅</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/19BNYeezWn/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳政誼" data-text="心力就像你只有一杯水，卻想倒滿整片沙漠 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力就像你只有一杯水，卻想倒滿整片沙漠</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳政誼</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1AfMeoSbvq/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許芳偉" data-text="暫停的價值，遠高於奔跑 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">暫停的價值，遠高於奔跑</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許芳偉</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/19EbSpZQun/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="周余諭" data-text="心力的邊界 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力的邊界</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周余諭</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1CgsCj3PtX/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳敬智" data-text="當你把自己活好，別人會看見希望； 當你讓別人變好，你的人生會開始有迴響 老獅 Lion" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">當你把自己活好，別人會看見希望； 當你讓別人變好，你的人生會開始有迴響</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳敬智</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1EBtfj7j1y/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="胡守丞" data-text="企業文化、核心理念的建立很重要 陳冠仁醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">企業文化、核心理念的建立很重要</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">胡</div>
+          <div><div class="author-name">胡守丞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/194Gt7wemh/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="龔聖淳" data-text="心力像一杯水，你不可能倒滿每一個杯子 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力像一杯水，你不可能倒滿每一個杯子</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">龔</div>
+          <div><div class="author-name">龔聖淳</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1M6NYnWXxN/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="劉家驎" data-text="先停一下，看看自己未來的方向 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">先停一下，看看自己未來的方向</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">劉</div>
+          <div><div class="author-name">劉家驎</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="邱媛貞" data-text="流量本身不值錢，值錢的是你對這群人的影響力 老獅 Lion" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">流量本身不值錢，值錢的是你對這群人的影響力</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">邱</div>
+          <div><div class="author-name">邱媛貞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="蔡明劼" data-text="成交來自於信任 張益豪醫師、老獅 Lion、蒼藍鴿" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">成交來自於信任</div>
+        <div class="speaker-tag">— 張益豪醫師、老獅 Lion、蒼藍鴿</div>
+        <div class="author">
+          <div class="avatar">蔡</div>
+          <div><div class="author-name">蔡明劼</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="彭馨儀" data-text="醫師藏鏡人，要具備問診式訪談力 老獅 Lion" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">醫師藏鏡人，要具備問診式訪談力</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">彭</div>
+          <div><div class="author-name">彭馨儀</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="魏志豪" data-text="暫停的價值有時遠高於奔跑 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">暫停的價值有時遠高於奔跑</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">魏</div>
+          <div><div class="author-name">魏志豪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaF8Fj3TrVt/?igsh=MWtocTM3aHVmMW9keQ==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="賈文君" data-text="AI 友善醫院，砍掉重練的精神；沒生病不等於健康 曹皓崴醫師、陳君琳醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">AI 友善醫院，砍掉重練的精神；沒生病不等於健康</div>
+        <div class="speaker-tag">— 曹皓崴醫師、陳君琳醫師</div>
+        <div class="author">
+          <div class="avatar">賈</div>
+          <div><div class="author-name">賈文君</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1Xje27xuP7/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="劉佳祐" data-text="心裡力的邊緣回到初衷 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心裡力的邊緣回到初衷</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">劉</div>
+          <div><div class="author-name">劉佳祐</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://m.facebook.com/story.php?story_fbid=pfbid02Tg6bM3zdAjph1bCMxmmi1PgmGzvxTVjVYLJyMjpXfJKWnGBBnCudq1DigL7UzhAcl&amp;id=100063572627204" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊智鈞" data-text="醫療的本質是信任 " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">醫療的本質是信任</div>
+        
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊智鈞</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="楊為理" data-text="無論目標的大小，要更在意為什麼要開始 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">無論目標的大小，要更在意為什麼要開始</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊為理</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="阮維鑫" data-text="價格敏感～價格透明～訴求感覺 林建佑醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">價格敏感～價格透明～訴求感覺</div>
+        <div class="speaker-tag">— 林建佑醫師</div>
+        <div class="author">
+          <div class="avatar">阮</div>
+          <div><div class="author-name">阮維鑫</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.threads.com/@weihsinjuan/post/DaHPs5Ek05b?xmt=AQG0wVkPjVG7zAn7dGmojSb5bPqIObrVtVWugDaS2lvkD545VQa-dSUa5k4_bW0BTJWqYcU&amp;slof=1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="王曜" data-text="我們總是忙到忘記自己是誰，卻又沒有時間再次想起 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我們總是忙到忘記自己是誰，卻又沒有時間再次想起</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王曜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1BT8gMLKG4/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張光正" data-text="用AI來做原本吃不到的 " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">用AI來做原本吃不到的</div>
+        
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張光正</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="曹皓崴" data-text="不要搭訕主持人 林建佑醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">不要搭訕主持人</div>
+        <div class="speaker-tag">— 林建佑醫師</div>
+        <div class="author">
+          <div class="avatar">曹</div>
+          <div><div class="author-name">曹皓崴</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="凃建維" data-text="讓自己成功，是能力，能讓別人成功才是影響力 老獅 Lion" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">讓自己成功，是能力，能讓別人成功才是影響力</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">凃</div>
+          <div><div class="author-name">凃建維</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="許文彥" data-text="做留量比流量更重要 老獅 Lion" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">做留量比流量更重要</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許文彥</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BmeijYdhC/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="李俊廷" data-text="永遠創新，永遠新創 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">永遠創新，永遠新創</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李俊廷</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/18pgQ8ukjW/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳昱傑" data-text="要把家庭也當作一個公司部門來經營，這樣花下心力，就會有 work-life balance 鄭晴醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">要把家庭也當作一個公司部門來經營，這樣花下心力，就會有 work-life balance</div>
+        <div class="speaker-tag">— 鄭晴醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳昱傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/18vXxsC3zo/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳品宏" data-text="有太遠，會忘記為什麼要出發 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">有太遠，會忘記為什麼要出發</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳品宏</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1HGE5YbSWH/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳依君" data-text="暫停的價值有時遠高於奔跑，我為什麼開始 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">暫停的價值有時遠高於奔跑，我為什麼開始</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳依君</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/reel/DaF5wUVs6kX/?igsh=ZHF0bTF2Y3FjdGI1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="江佩璋" data-text="用經營公司的思維經營你的人生 " data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">用經營公司的思維經營你的人生</div>
+        
+        <div class="author">
+          <div class="avatar">江</div>
+          <div><div class="author-name">江佩璋</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaF3cvovnSz/?igsh=NnYwejNyZzV4MTd3" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳煥昇" data-text="想起自己的day 1 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">想起自己的day 1</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳煥昇</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1D9kNtPm7o/" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="周余諭" data-text="心力的邊界 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力的邊界</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">周</div>
+          <div><div class="author-name">周余諭</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="潘琪方" data-text="溝通的本質：交換傳遞連結 張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">溝通的本質：交換傳遞連結</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">潘</div>
+          <div><div class="author-name">潘琪方</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/p/DaFoscoFN6c/?igsh=MXViZW1ndDFpMWRvdA==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="郭亮增" data-text="不要忘記你是誰 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">不要忘記你是誰</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">郭</div>
+          <div><div class="author-name">郭亮增</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/1QNtorcDkW/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="鄭畇綺" data-text="Always new, always innovative 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">Always new, always innovative</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">鄭</div>
+          <div><div class="author-name">鄭畇綺</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/18umQBfGxC/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="張修碩" data-text="打造AI友善的營運系統 曹皓崴醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">打造AI友善的營運系統</div>
+        <div class="speaker-tag">— 曹皓崴醫師</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張修碩</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="洪健智" data-text="當你把自己活好，別人會看到希望 老獅 Lion" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">當你把自己活好，別人會看到希望</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">洪</div>
+          <div><div class="author-name">洪健智</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="廖偉成" data-text="星雲大師金句 老獅 Lion" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">星雲大師金句</div>
+        <div class="speaker-tag">— 老獅 Lion</div>
+        <div class="author">
+          <div class="avatar">廖</div>
+          <div><div class="author-name">廖偉成</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.threads.com/@drmaxliao/post/DaFeEu8iafb?xmt=AQG0L7Y-ERUPofknDYvjHda_HhoYD0SBxkbCWHPySOlA-3YTjUiUN70H3EDvL_NwlW-FlEI&amp;slof=1" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="楊惠蘚" data-text="感謝白袍人生學院，希望明年的今天比此時更進步 " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">感謝白袍人生學院，希望明年的今天比此時更進步</div>
+        
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊惠蘚</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="蔡宜臻" data-text="價值來自於創造 陳冠仁醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">價值來自於創造</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">蔡</div>
+          <div><div class="author-name">蔡宜臻</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="魏志豪" data-text="暫停不是退後，是讓你想清楚 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">暫停不是退後，是讓你想清楚</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">魏</div>
+          <div><div class="author-name">魏志豪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="徐盛邦" data-text="心力 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">心力</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">徐</div>
+          <div><div class="author-name">徐盛邦</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳柏儒" data-text="忘記為何開始創業 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">忘記為何開始創業</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳柏儒</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳彥霖" data-text="真正的醫病溝通，不是把醫學知識講得更完整，而是先辨識患者此刻需要的是交換、傳遞，還是連結 張益豪醫師" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">真正的醫病溝通，不是把醫學知識講得更完整，而是先辨識患者此刻需要的是交換、傳遞，還是連結</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳彥霖</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/17cswoK66j/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-light">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-dark" data-name="鄭晴" data-text="想想最一開始想把公司帶到哪 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">想想最一開始想把公司帶到哪</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">鄭</div>
+          <div><div class="author-name">鄭晴</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊家純" data-text="意志力是一種稀缺的資源 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">意志力是一種稀缺的資源</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊家純</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="徐嘉賢" data-text="「痴情／痴漢」 林建佑醫師、張益豪醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">「痴情／痴漢」</div>
+        <div class="speaker-tag">— 林建佑醫師、張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">徐</div>
+          <div><div class="author-name">徐嘉賢</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="潘珮瑜" data-text="溝通是看診最重要一部分，三個樓梯 張益豪醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">溝通是看診最重要一部分，三個樓梯</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">潘</div>
+          <div><div class="author-name">潘珮瑜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳書毅" data-text="是否心力不足 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">是否心力不足</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳書毅</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳炳曄" data-text="停下來看一看，不一定要前進 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">停下來看一看，不一定要前進</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳炳曄</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="邱文瑾" data-text="重點人物在哪裡，我們要去哪里 " data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">重點人物在哪裡，我們要去哪里</div>
+        
+        <div class="author">
+          <div class="avatar">邱</div>
+          <div><div class="author-name">邱文瑾</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/carebeautyclinic?igsh=ZXQ5cDJqbHJ3YzA0" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="翁子傑" data-text="我們總是忙到忘記自己 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我們總是忙到忘記自己</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">翁</div>
+          <div><div class="author-name">翁子傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳冠仁" data-text="超棒！ 張益豪醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">超棒！</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳冠仁</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="李宜靜" data-text="為什麼會出發？ 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">為什麼會出發？</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李宜靜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="黃千峯" data-text="價值觀、文化對企業的重要性 陳冠仁醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">價值觀、文化對企業的重要性</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">黃</div>
+          <div><div class="author-name">黃千峯</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="李亭諪" data-text="永遠創新，永遠新創 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">永遠創新，永遠新創</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">李</div>
+          <div><div class="author-name">李亭諪</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="許柏格" data-text="信任 張益豪醫師、蒼藍鴿" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">信任</div>
+        <div class="speaker-tag">— 張益豪醫師、蒼藍鴿</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許柏格</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="張儷馨" data-text="三個梯子 張益豪醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">三個梯子</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">張</div>
+          <div><div class="author-name">張儷馨</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="吳其穎" data-text=" 陳冠仁醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="text text-empty">（本題未填寫具體內容）</div>
+        <div class="speaker-tag">— 陳冠仁醫師</div>
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳其穎</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="黃哲緯" data-text="我為什麼開始 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我為什麼開始</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">黃</div>
+          <div><div class="author-name">黃哲緯</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳君琳" data-text="當規則不清楚，就會用猜測和情緒來填補 " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">當規則不清楚，就會用猜測和情緒來填補</div>
+        
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳君琳</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="楊為傑" data-text="all in AI 曹皓崴醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">all in AI</div>
+        <div class="speaker-tag">— 曹皓崴醫師</div>
+        <div class="author">
+          <div class="avatar">楊</div>
+          <div><div class="author-name">楊為傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="羅士傑" data-text="永遠創新 永遠新創 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">永遠創新 永遠新創</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">羅</div>
+          <div><div class="author-name">羅士傑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/18jStWuMUb/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="許聯輝" data-text="三把梯子 張益豪醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">三把梯子</div>
+        <div class="speaker-tag">— 張益豪醫師</div>
+        <div class="author">
+          <div class="avatar">許</div>
+          <div><div class="author-name">許聯輝</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="阮維鑫" data-text="價格敏感應對方式：報價透明、感性驅動 林建佑醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">價格敏感應對方式：報價透明、感性驅動</div>
+        <div class="speaker-tag">— 林建佑醫師</div>
+        <div class="author">
+          <div class="avatar">阮</div>
+          <div><div class="author-name">阮維鑫</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="洪聖凱" data-text="暫停的價值，有時候遠高於奔跑 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">暫停的價值，有時候遠高於奔跑</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">洪</div>
+          <div><div class="author-name">洪聖凱</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="林邵臻" data-text="我們總是忙到忘記自己是誰 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我們總是忙到忘記自己是誰</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">林</div>
+          <div><div class="author-name">林邵臻</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.facebook.com/share/p/1BMgFsTx3p/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="沈瑞文" data-text="“診所的核心價值是什麼”，值得我好好思考，這個好像不只一人說 " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">“診所的核心價值是什麼”，值得我好好思考，這個好像不只一人說</div>
+        
+        <div class="author">
+          <div class="avatar">沈</div>
+          <div><div class="author-name">沈瑞文</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="陳韻筑" data-text="我們總是忙到忘記自己是誰， 卻又沒有時間再次想起 阿金" data-haslink="true">
+      <div class="card-inner">
+        <div class="post-badge">公開分享</div>
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我們總是忙到忘記自己是誰， 卻又沒有時間再次想起</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳韻筑</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        <div class="links"><a href="https://www.instagram.com/stories/euchuchen/3928470865600802181?utm_source=ig_story_item_share&amp;igsh=MXN2Y2I5ajc3OTRhaw==" target="_blank" rel="noopener noreferrer" class="link-btn link-btn-dark">看原文分享 →</a></div>
+      </div>
+    </div>
+    <div class="card card-light" data-name="陳昭仁" data-text="我是一個健康的醫師嗎？ 陳君琳醫師" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">我是一個健康的醫師嗎？</div>
+        <div class="speaker-tag">— 陳君琳醫師</div>
+        <div class="author">
+          <div class="avatar">陳</div>
+          <div><div class="author-name">陳昭仁</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="何建輝" data-text="如何讓醫師留下來？ " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">如何讓醫師留下來？</div>
+        
+        <div class="author">
+          <div class="avatar">何</div>
+          <div><div class="author-name">何建輝</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="王浩洸" data-text="馬上就開始短影音 蒼藍鴿" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">馬上就開始短影音</div>
+        <div class="speaker-tag">— 蒼藍鴿</div>
+        <div class="author">
+          <div class="avatar">王</div>
+          <div><div class="author-name">王浩洸</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-dark" data-name="顧芳瑜" data-text="知道自己為什麼會創業 阿金" data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="quote-mark">"</div><div class="text">知道自己為什麼會創業</div>
+        <div class="speaker-tag">— 阿金</div>
+        <div class="author">
+          <div class="avatar">顧</div>
+          <div><div class="author-name">顧芳瑜</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+    <div class="card card-light" data-name="吳張瑀" data-text=" " data-haslink="false">
+      <div class="card-inner">
+        
+        <div class="stars">★★★★★</div>
+        <div class="text text-empty">（本題未填寫具體內容）</div>
+        
+        <div class="author">
+          <div class="avatar">吳</div>
+          <div><div class="author-name">吳張瑀</div><div class="author-label">白袍夥伴</div></div>
+        </div>
+        
+      </div>
+    </div>
+  <div class="empty-msg" id="empty-msg" style="display:none;">沒有符合條件的回饋，換個關鍵字試試？</div>
+</main>
+
+<footer>
+  <div class="brand">白袍人生學院 White Coat Life Academy</div>
+  <div class="tag">一群人一起打拼，走得更遠</div>
+  <p class="quote">
+    復盤過去，才能看清方向。<br>
+    展望未來，才敢邁開步伐。<br><br>
+    謝謝每一位白袍夥伴，<br>
+    這一天的分享。
+  </p>
+  <p class="copyright">© 2026 白袍人生學院 ｜ 高峰年會夥伴回饋牆</p>
+</footer>
+
+<script>
+const input = document.getElementById('search');
+const cards = document.querySelectorAll('.card');
+const emptyMsg = document.getElementById('empty-msg');
+
+function applyFilter() {
+  const q = input.value.toLowerCase().trim();
+  let visibleCount = 0;
+  cards.forEach(c => {
+    const name = (c.dataset.name||'').toLowerCase();
+    const text = (c.dataset.text||'').toLowerCase();
+    const show = !q || name.includes(q) || text.includes(q);
+    c.style.display = show ? '' : 'none';
+    if (show) visibleCount++;
+  });
+  emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+input.addEventListener('input', applyFilter);
+</script>
+
+</body>
+</html>
